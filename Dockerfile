@@ -25,7 +25,7 @@ ADD services/ /etc/service/
 RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh && \
 
 # give abc a home folder
-usermod -d /config abc
+usermod -d /app abc
 
 # ports and volumes
 EXPOSE 9117
