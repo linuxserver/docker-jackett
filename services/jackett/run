@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/sbin/setuser abc mono /app/Jackett/JackettConsole.exe
