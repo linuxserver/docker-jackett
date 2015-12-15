@@ -9,3 +9,4 @@
 
 
 chown -R abc:abc /app /config
+chown abc:abc /torrents
