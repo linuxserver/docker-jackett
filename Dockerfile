@@ -26,6 +26,6 @@ RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh && \
 usermod -d /app abc
 
 # ports and volumes
-VOLUME /config
+VOLUME /config /torrents
 EXPOSE 9117
 
