@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# opt out for autoupdates
+[ "$ADVANCED_DISABLEUPDATES" ] && exit 0
+
+
 # determine latest remote version
 jack_ver="$(curl -s https://api.github.com/repos/Jackett/Jackett/releases/latest | grep browser_download_url | grep Mono | cut -d '"' -f 4)"
 jackremote="$(echo $jack_ver | tr -d "[=.=][:alpha:][=/=][=:=][:space:]")"
