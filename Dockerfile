@@ -9,8 +9,8 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E03280
 echo "deb http://download.mono-project.com/repo/debian wheezy main" | tee /etc/apt/sources.list.d/mono-xamarin.list && \
 apt-get update -q && \
 apt-get install $APTLIST -qy && \
-jack_ver=$(curl -s https://api.github.com/repos/Jackett/Jackett/releases/latest | grep browser_download_url | grep Mono  | cut -d '"' -f 4) && \
-curl -o /tmp/jacket.tar.gz -L $jack_ver && \
+jack_tag=$(wget -q https://github.com/Jackett/Jackett/releases/latest  -O - | grep -E \/tag\/ | awk -F "[><]" '{print $3}') && \
+curl -o /tmp/jacket.tar.gz -L https://github.com/Jackett/Jackett/releases/download/$jack_tag/Jackett.Binaries.Mono.tar.gz && \
 mkdir -p /app/Jackett && \
 tar xvf /tmp/jacket.tar.gz -C /app/Jackett --strip-components=1 && \
 
