@@ -14,7 +14,7 @@ apt-get install $APTLIST -qy && \
 apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 # install Jackett
-RUN jack_tag=$(wget -q https://github.com/Jackett/Jackett/releases/latest  -O - | grep -E \/tag\/ | awk -F "[><]" '{print $3}') && \
+RUN jack_tag=$(curl -sX GET  "https://api.github.com/repos/Jackett/Jackett/releases/latest" | awk '/tag_name/{print $4;exit}' FS='[""]') && \
 curl -o /tmp/jacket.tar.gz -L https://github.com/Jackett/Jackett/releases/download/$jack_tag/Jackett.Binaries.Mono.tar.gz && \
 mkdir -p /app/Jackett && \
 tar xvf /tmp/jacket.tar.gz -C /app/Jackett --strip-components=1 && \
