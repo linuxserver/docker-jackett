@@ -33,7 +33,7 @@ Part of what makes our containers work so well is by allowing you to specify you
 
 ## Setting up the application
 
-The web interface is at <your-ip>:9117 , configure various trackers there.
+The web interface is at `<your-ip>:9117` , configure various trackers there.
 More info at [Jackett](https://github.com/Jackett/Jackett).
 
 
