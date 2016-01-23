@@ -5,7 +5,7 @@
 
 
 # determine latest remote version
-jack_remote=$(curl -sX GET  "https://api.github.com/repos/Jackett/Jackett/releases/latest" | awk '/tag_name/{print $4;exit}' FS='[""]')
+jack_remote=$"(wget -q https://github.com/Jackett/Jackett/releases/latest -O - | grep -E \/tag\/ | awk -F "[><]" '{print $3}')"
 # get local version
 jack_local="$(mono /app/Jackett/JackettConsole.exe --version | sed -e 's/.*t//' -e "s/\.0.*//")"
 
