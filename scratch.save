@@ -1,1 +1,0 @@
-LATEST=$(curl -s -i https://github.com/Jackett/Jackett/releases/latest  -L | egrep -A 10 '301 Moved Permanently|302 Found' | grep 'Location' | awk -F': ' '{print $2}' | tail -1)
