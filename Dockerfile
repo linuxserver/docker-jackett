@@ -5,7 +5,7 @@ MAINTAINER Sparklyballs <sparkylballs@linuxserver.io>
 ENV APTLIST="bzip2 libcurl4-openssl-dev mono-complete wget"
 
 # change abc home folder
-usermod -d /app abc
+RUN usermod -d /app abc
 
 # install packages
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF && \
