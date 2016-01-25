@@ -10,25 +10,26 @@ echo "deb http://download.mono-project.com/repo/debian wheezy main" | tee /etc/a
 apt-get update -q && \
 apt-get install $APTLIST -qy && \
 
-# clean up
-apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
-
 # install Jackett
-RUN jack_tag=$(curl -sX GET  "https://api.github.com/repos/Jackett/Jackett/releases/latest" | awk '/tag_name/{print $4;exit}' FS='[""]') && \
+jack_tag=$(curl -sX GET  "https://api.github.com/repos/Jackett/Jackett/releases/latest" | awk '/tag_name/{print $4;exit}' FS='[""]') && \
 curl -o /tmp/jacket.tar.gz -L https://github.com/Jackett/Jackett/releases/download/$jack_tag/Jackett.Binaries.Mono.tar.gz && \
 mkdir -p /app/Jackett && \
 tar xvf /tmp/jacket.tar.gz -C /app/Jackett --strip-components=1 && \
-rm -rf /tmp/*
+
+# clean up
+apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 # Adding Custom files
 ADD init/ /etc/my_init.d/
 ADD services/ /etc/service/
 RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh && \
 
-# give abc a home folder
+# change abc home folder
 usermod -d /app abc
 
 # ports and volumes
 VOLUME /config /downloads
 EXPOSE 9117
+
+
 
