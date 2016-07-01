@@ -1,35 +1,46 @@
-FROM linuxserver/baseimage
+FROM lsiobase/alpine
+MAINTAINER sparklyballs
 
-MAINTAINER Sparklyballs <sparkylballs@linuxserver.io>
-
-ENV APTLIST="bzip2 libcurl4-openssl-dev mono-complete wget"
+ENV HOME="/config"
 
 # change abc home folder
-RUN usermod -d /app abc
+RUN \
+ usermod -d /app abc
 
-# install packages
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF && \
-echo "deb http://download.mono-project.com/repo/debian wheezy main" | tee /etc/apt/sources.list.d/mono-xamarin.list && \
-apt-get update -q && \
-apt-get install $APTLIST -qy && \
+# install build-dependencies
+RUN \
+ apk add --no-cache --virtual=build-dependencies \
+	curl \
+	tar && \
 
-# install Jackett
-jack_tag=$(curl -sX GET  "https://api.github.com/repos/Jackett/Jackett/releases/latest" | awk '/tag_name/{print $4;exit}' FS='[""]') && \
-curl -o /tmp/jacket.tar.gz -L https://github.com/Jackett/Jackett/releases/download/$jack_tag/Jackett.Binaries.Mono.tar.gz && \
-mkdir -p /app/Jackett && \
-tar xvf /tmp/jacket.tar.gz -C /app/Jackett --strip-components=1 && \
+# install jackett
+ mkdir -p \
+	/app/Jackett && \
+ jack_tag=$(curl -sX GET "https://api.github.com/repos/Jackett/Jackett/releases/latest" \
+	| awk '/tag_name/{print $4;exit}' FS='[""]') && \
+ curl -o \
+	/tmp/jacket.tar.gz -L \
+	https://github.com/Jackett/Jackett/releases/download/$jack_tag/Jackett.Binaries.Mono.tar.gz && \
+ tar xvf /tmp/jacket.tar.gz -C \
+	/app/Jackett --strip-components=1 && \
 
-# clean up
-apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
+# uninstall build dependencies
+ apk del --purge \
+	build-dependencies && \
 
-# Adding Custom files
-ADD init/ /etc/my_init.d/
-ADD services/ /etc/service/
-RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh
+# cleanup
+ rm -rf /tmp/*
 
-# ports and volumes
+# install runtime packages
+RUN \
+ apk add --no-cache \
+	libcurl && \
+ apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/testing \
+	mono
+
+# add local files
+COPY root/ /
+
+# ports and volumes
 VOLUME /config /downloads
 EXPOSE 9117
-
-
-

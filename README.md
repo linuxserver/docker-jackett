@@ -1,6 +1,6 @@
 ![https://linuxserver.io](http://www.linuxserver.io/wp-content/uploads/2015/06/linuxserver_medium.png)
 
-The [LinuxServer.io](https://www.linuxserver.io/) team brings you another quality container release featuring auto-update on startup, easy user mapping and community support. Be sure to checkout our [forums](https://forum.linuxserver.io/index.php) or for real-time support our [IRC](https://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`.
+The [LinuxServer.io](https://www.linuxserver.io/) team brings you another quality container release featuring easy user mapping and community support. Be sure to checkout our [forums](https://forum.linuxserver.io/index.php) or for real-time support our [IRC](https://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`.
 
 # linuxserver/jackett
 
@@ -23,7 +23,7 @@ docker create --name=jackett -v /etc/localtime:/etc/localtime:ro \
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
 
-It is based on phusion-baseimage with ssh removed, for shell access whilst the container is running do `docker exec -it jackett /bin/bash`.
+It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it jackett /bin/bash`.
 
 ### User / Group Identifiers
 
@@ -37,14 +37,14 @@ The web interface is at `<your-ip>:9117` , configure various trackers and connec
 More info at [Jackett](https://github.com/Jackett/Jackett).
 
 
-## Updates
+## Info
 
-* Upgrade to the latest version simply `docker restart jackett`.
 * To monitor the logs of the container in realtime `docker logs -f jackett`.
 
 
 
 ## Versions
 
-+ **25.01.2016:** Initial Release.
++ **01.07.16:** Rebase to alpine linux for smaller image.
++ **25.01.16:** Initial Release.
 
