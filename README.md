@@ -13,6 +13,7 @@ docker create --name=jackett \
 -v <path to data>:/config \
 -v <path to blackhole>:/downloads \
 -e PGID=<gid> -e PUID=<uid> \
+-e TZ=<timezone> \
 -p 9117:9117 linuxserver/jackett
 ```
 
@@ -23,6 +24,7 @@ docker create --name=jackett \
 * `-v /downloads` - Path to torrent blackhole
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
+* `-e TZ` for timezone EG. Europe/London
 
 It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it jackett /bin/bash`.
 
