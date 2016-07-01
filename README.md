@@ -9,15 +9,16 @@ Jackett works as a proxy server: it translates queries from apps (Sonarr, SickRa
 ## Usage
 
 ```
-docker create --name=jackett -v /etc/localtime:/etc/localtime:ro \
--v <path to data>:/config -v <path to blackhole>:/downloads \
--e PGID=<gid> -e PUID=<uid> -p 9117:9117 linuxserver/jackett
+docker create --name=jackett \
+-v <path to data>:/config \
+-v <path to blackhole>:/downloads \
+-e PGID=<gid> -e PUID=<uid> \
+-p 9117:9117 linuxserver/jackett
 ```
 
 **Parameters**
 
 * `-p 9117` - the port(s)
-* `-v /etc/localtime` for timesync - *optional*
 * `-v /config` - where Jackett should store its config file.
 * `-v /downloads` - Path to torrent blackhole
 * `-e PGID` for GroupID - see below for explanation
