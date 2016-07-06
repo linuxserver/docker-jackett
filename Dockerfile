@@ -1,19 +1,22 @@
 FROM lsiobase/alpine
 MAINTAINER sparklyballs
 
-ENV HOME="/config"
+# environment settings
+ENV XDG_DATA_HOME="/config"
+ENV XDG_CONFIG_HOME="/config"
 
-# change abc home folder
+# install packages
 RUN \
- usermod -d /app abc
-
-# install build-dependencies
-RUN \
- apk add --no-cache --virtual=build-dependencies \
+ apk add --no-cache \
 	curl \
-	tar && \
+	libcurl \
+	tar \
+	wget && \
+ apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/testing \
+	mono
 
 # install jackett
+RUN \
  mkdir -p \
 	/app/Jackett && \
  jack_tag=$(curl -sX GET "https://api.github.com/repos/Jackett/Jackett/releases/latest" \
@@ -24,19 +27,8 @@ RUN \
  tar xvf /tmp/jacket.tar.gz -C \
 	/app/Jackett --strip-components=1 && \
 
-# uninstall build dependencies
- apk del --purge \
-	build-dependencies && \
-
 # cleanup
  rm -rf /tmp/*
-
-# install runtime packages
-RUN \
- apk add --no-cache \
-	libcurl && \
- apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/testing \
-	mono
 
 # add local files
 COPY root/ /
