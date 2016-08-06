@@ -2,8 +2,8 @@ FROM lsiobase/alpine
 MAINTAINER sparklyballs
 
 # environment settings
-ENV XDG_DATA_HOME="/config"
-ENV XDG_CONFIG_HOME="/config"
+ENV XDG_DATA_HOME="/config" \
+XDG_CONFIG_HOME="/config"
 
 # install packages
 RUN \
@@ -12,7 +12,8 @@ RUN \
 	libcurl \
 	tar \
 	wget && \
- apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/testing \
+ apk add --no-cache \
+	--repository http://nl.alpinelinux.org/alpine/edge/testing \
 	mono
 
 # install jackett
@@ -28,7 +29,8 @@ RUN \
 	/app/Jackett --strip-components=1 && \
 
 # cleanup
- rm -rf /tmp/*
+ rm -rf \
+	/tmp/*
 
 # add local files
 COPY root/ /
