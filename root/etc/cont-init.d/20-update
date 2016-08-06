@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/with-contenv bash
 
 # opt out for autoupdates
 [ "$ADVANCED_DISABLEUPDATES" ] && exit 0
@@ -20,5 +20,6 @@ rm /tmp/jacket.tar.gz
 fi
 
 chown -R abc:abc /app
+
 
 
