@@ -13,6 +13,9 @@ The [LinuxServer.io](https://linuxserver.io) team brings you another container r
 
 Jackett works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software. This allows for getting recent uploads (like RSS) and performing searches. Jackett is a single repository of maintained indexer scraping & translation logic - removing the burden from other apps.[Jackett](https://github.com/Jackett/Jackett)
 
+[![jackett](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/jackett-banner.png)][jacketturl]
+[jacketturl]: https://github.com/Jackett/Jackett
+
 ## Usage
 
 ```
