@@ -64,9 +64,9 @@ More info at [Jackett](https://github.com/Jackett/Jackett).
 * To monitor the logs of the container in realtime `docker logs -f jackett`.
 
 
-
 ## Versions
 
++ **22.09.16:** Remove autoupdate, tidy up Dockerfile.
 + **10.09.16:** Add layer badges to README.
 + **28.08.16:** Add badges to README.
 + **06.08.16:** Rebase to alpine linux for smaller image.
