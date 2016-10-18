@@ -79,7 +79,7 @@ More info at [Jackett](https://github.com/Jackett/Jackett).
 
 ## Versions
 
-+ **14-10-16:** Add version layer information.
++ **14.10.16:** Add version layer information.
 + **22.09.16:** Remove autoupdate, tidy up Dockerfile.
 + **10.09.16:** Add layer badges to README.
 + **28.08.16:** Add badges to README.
