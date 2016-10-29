@@ -18,6 +18,9 @@ RUN \
 	tar \
 	wget && \
  apk add --no-cache \
+	--repository http://nl.alpinelinux.org/alpine/edge/main \
+	python2 && \
+ apk add --no-cache \
 	--repository http://nl.alpinelinux.org/alpine/edge/testing \
 	mono && \
 
