@@ -80,6 +80,7 @@ More info at [Jackett](https://github.com/Jackett/Jackett).
 
 ## Versions
 
++ **09.02.17:** Rebase to alpine 3.5.
 + **29.10.16:** Call python2 from edge main to satisfy new mono dependency.
 + **14.10.16:** Add version layer information.
 + **22.09.16:** Remove autoupdate, tidy up Dockerfile.
