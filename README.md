@@ -22,11 +22,13 @@ Jackett works as a proxy server: it translates queries from apps (Sonarr, SickRa
 ## Usage
 
 ```
-docker create --name=jackett \
+docker create \
+--name=jackett \
 -v <path to data>:/config \
 -v <path to blackhole>:/downloads \
 -e PGID=<gid> -e PUID=<uid> \
 -e TZ=<timezone> \
+-v /etc/localtime:/etc/localtime:ro \
 -p 9117:9117 \
 linuxserver/jackett
 ```
@@ -42,12 +44,17 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 * `-p 9117` - the port(s)
 * `-v /config` - where Jackett should store its config file.
 * `-v /downloads` - Path to torrent blackhole
+* `-v /etc/localtime` for timesync - see [Localtime](#localtime) for important information
+* `-e TZ` for timezone information, Europe/London - see [Localtime](#localtime) for important information
 * `-e RUN_OPTS` - Optionally specify additional arguments to be passed. EG. `--ProxyConnection=10.0.0.100:1234`
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
-* `-e TZ` for timezone EG. Europe/London
 
-It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it jackett /bin/bash`.
+It is based on ubuntu xenial with s6 overlay, for shell access whilst the container is running do `docker exec -it jackett /bin/bash`.
+
+## Localtime
+
+It is important that you either set `-v /etc/localtime:/etc/localtime:ro` or the TZ variable, mono will throw exceptions without one of them set.
 
 ### User / Group Identifiers
 
@@ -65,6 +72,7 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 The web interface is at `<your-ip>:9117` , configure various trackers and connections to other apps there.
 More info at [Jackett](https://github.com/Jackett/Jackett).
 
+Disable autoupdates in the webui to prevent jackett crashing, the image is refreshed weekly so pick up updates that way.
 
 ## Info
 
@@ -80,6 +88,7 @@ More info at [Jackett](https://github.com/Jackett/Jackett).
 
 ## Versions
 
++ **17.04.17:** Switch to using inhouse mono baseimage, ubuntu xenial based.
 + **09.02.17:** Rebase to alpine 3.5.
 + **29.10.16:** Call python2 from edge main to satisfy new mono dependency.
 + **14.10.16:** Add version layer information.
