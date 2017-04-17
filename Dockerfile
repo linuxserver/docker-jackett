@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:3.5
+FROM lsiobase/mono
 MAINTAINER sparklyballs
 
 # set version label
@@ -7,22 +7,15 @@ ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
 # environment settings
+ARG DEBIAN_FRONTEND="noninteractive"
 ENV XDG_DATA_HOME="/config" \
 XDG_CONFIG_HOME="/config"
 
-# install packages
-RUN \
- apk add --no-cache \
-	curl \
-	libcurl \
-	python2 \
-	tar \
-	wget && \
- apk add --no-cache \
-	--repository http://nl.alpinelinux.org/alpine/edge/testing \
-	mono && \
-
 # install jackett
+RUN \
+ apt-get update && \
+ apt-get install -y \
+	wget && \
  mkdir -p \
 	/app/Jackett && \
  jack_tag=$(curl -sX GET "https://api.github.com/repos/Jackett/Jackett/releases/latest" \
@@ -34,9 +27,12 @@ RUN \
  /tmp/jacket.tar.gz -C \
 	/app/Jackett --strip-components=1 && \
 
-# cleanup
+# cleanup
+ apt-get clean && \
  rm -rf \
-	/tmp/*
+	/tmp/* \
+	/var/lib/apt/lists/* \
+	/var/tmp/*
 
 # add local files
 COPY root/ /
