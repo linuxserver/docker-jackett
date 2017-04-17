@@ -70,7 +70,7 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 ## Setting up the application
 
 The web interface is at `<your-ip>:9117` , configure various trackers and connections to other apps there.
-More info at [Jackett](https://github.com/Jackett/Jackett).
+More info at [Jackett][appurl].
 
 Disable autoupdates in the webui to prevent jackett crashing, the image is refreshed weekly so pick up updates that way.
 
