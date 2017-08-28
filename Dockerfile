@@ -18,7 +18,7 @@ RUN \
 	wget && \
  mkdir -p \
 	/app/Jackett && \
- jack_tag=$(curl -sX GET "https://api.github.com/repos/Jackett/Jackett/releases/latest" \
+ jack_tag=$(curl -sX GET "https://api.github.com/repos/Jackett/Jackett/releases" \
 	| awk '/tag_name/{print $4;exit}' FS='[""]') && \
  curl -o \
  /tmp/jacket.tar.gz -L \
