@@ -88,6 +88,7 @@ Disable autoupdates in the webui to prevent jackett crashing, the image is refre
 
 ## Versions
 
++ **13.12.17:** Fix continuation lines.
 + **17.04.17:** Switch to using inhouse mono baseimage, ubuntu xenial based.
 + **09.02.17:** Rebase to alpine 3.5.
 + **29.10.16:** Call python2 from edge main to satisfy new mono dependency.
