@@ -1,4 +1,4 @@
 #!/usr/bin/with-contenv bash
 
 exec \
-	s6-setuidgid abc mono /app/Jackett/JackettConsole.exe "${RUN_OPTS}"
+	s6-setuidgid abc mono /app/Jackett/JackettConsole.exe --NoUpdates "${RUN_OPTS}"
