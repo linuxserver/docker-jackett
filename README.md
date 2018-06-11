@@ -88,6 +88,7 @@ Disable autoupdates in the webui to prevent jackett crashing, the image is refre
 
 ## Versions
 
++ **11.06.18:** Ensure root ownership of Jackett files.
 + **09.02.18:** Add --NoUpdates flag.
 + **13.12.17:** Fix continuation lines.
 + **17.04.17:** Switch to using inhouse mono baseimage, ubuntu xenial based.
