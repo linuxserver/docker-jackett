@@ -27,6 +27,8 @@ RUN \
  tar xf \
  /tmp/jacket.tar.gz -C \
 	/app/Jackett --strip-components=1 && \
+ echo "**** fix for host id mapping error ****" && \
+ chown root:root /app/Jackett && \
  echo "**** cleanup ****" && \
  apt-get clean && \
  rm -rf \
