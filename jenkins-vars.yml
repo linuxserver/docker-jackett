@@ -1,0 +1,29 @@
+---
+
+# jenkins variables
+project_name: docker-jackett
+external_type: github_stable
+release_type: stable
+release_tag: latest
+ls_branch: master
+repo_vars:
+  - EXT_GIT_BRANCH = 'master'
+  - EXT_USER = 'Jackett'
+  - EXT_REPO = 'Jackett'
+  - BUILD_VERSION_ARG = 'JACKETT_RELEASE'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-jackett'
+  - CONTAINER_NAME = 'jackett'
+  - DOCKERHUB_IMAGE = 'linuxserver/jackett'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/jackett'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/jackett'
+  - DIST_IMAGE = 'ubuntu'
+  - MULTIARCH='true'
+  - CI='true'
+  - CI_WEB='true'
+  - CI_PORT='9117'
+  - CI_SSL='false'
+  - CI_DELAY='120'
+  - CI_DOCKERENV='TZ=US/Pacific'
+  - CI_AUTH='user:password'
+  - CI_WEBPATH=''
