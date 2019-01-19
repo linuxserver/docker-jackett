@@ -82,14 +82,10 @@ pipeline {
         script{
           env.PACKAGE_TAG = sh(
             script: '''#!/bin/bash
-                       http_code=$(curl --write-out %{http_code} -s -o /dev/null \
-                                   https://raw.githubusercontent.com/${LS_USER}/${LS_REPO}/master/package_versions.txt)
-                       if [[ "${http_code}" -ne 200 ]] ; then
-                         echo none
+                       if [ -e package_versions.txt ] ; then
+                         cat package_versions.txt | md5sum | cut -c1-8
                        else
-                         curl -s \
-                           https://raw.githubusercontent.com/${LS_USER}/${LS_REPO}/master/package_versions.txt \
-                         | md5sum | cut -c1-8
+                         echo none
                        fi''',
             returnStdout: true).trim()
         }
@@ -121,7 +117,7 @@ pipeline {
       steps{
         script{
           env.EXT_RELEASE_CLEAN = sh(
-            script: '''echo ${EXT_RELEASE} | sed 's/[~,%@+;:]//g' ''',
+            script: '''echo ${EXT_RELEASE} | sed 's/[~,%@+;:/]//g' ''',
             returnStdout: true).trim()
         }
       }
@@ -342,7 +338,7 @@ pipeline {
                   chmod 777 /tmp/package_versions.txt'
               elif [ "${DIST_IMAGE}" == "ubuntu" ]; then
                 docker run --rm --entrypoint '/bin/sh' -v ${TEMPDIR}:/tmp ${LOCAL_CONTAINER} -c '\
-                  apt -qq list --installed | awk "{print \$1,\$2}" > /tmp/package_versions.txt && \
+                  apt list -qq --installed > /tmp/package_versions.txt && \
                   chmod 777 /tmp/package_versions.txt'
               fi
               NEW_PACKAGE_TAG=$(md5sum ${TEMPDIR}/package_versions.txt | cut -c1-8 )
