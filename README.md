@@ -51,8 +51,8 @@ Here are some example snippets to help you get started creating a container.
 ```
 docker create \
   --name=jackett \
-  -e PUID=1001 \
-  -e PGID=1001 \
+  -e PUID=1000 \
+  -e PGID=1000 \
   -e TZ=Europe/London \
   -e RUN_OPTS=<run options here> `#optional` \
   -p 9117:9117 \
@@ -75,8 +75,8 @@ services:
     image: linuxserver/jackett
     container_name: jackett
     environment:
-      - PUID=1001
-      - PGID=1001
+      - PUID=1000
+      - PGID=1000
       - TZ=Europe/London
       - RUN_OPTS=<run options here> #optional
     volumes:
@@ -84,7 +84,6 @@ services:
       - <path to blackhole>:/downloads
     ports:
       - 9117:9117
-    mem_limit: 4096m
     restart: unless-stopped
 ```
 
@@ -95,8 +94,8 @@ Container images are configured using parameters passed at runtime (such as thos
 | Parameter | Function |
 | :----: | --- |
 | `-p 9117` | WebUI |
-| `-e PUID=1001` | for UserID - see below for explanation |
-| `-e PGID=1001` | for GroupID - see below for explanation |
+| `-e PUID=1000` | for UserID - see below for explanation |
+| `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London. |
 | `-e RUN_OPTS=<run options here>` | Optionally specify additional arguments to be passed. EG. `--ProxyConnection=10.0.0.100:1234`. |
 | `-v /config` | Where Jackett should store its config file. |
@@ -108,11 +107,11 @@ When using volumes (`-v` flags) permissions issues can arise between the host OS
 
 Ensure any volume directories on the host are owned by the same user you specify and any permissions issues will vanish like magic.
 
-In this instance `PUID=1001` and `PGID=1001`, to find yours use `id user` as below:
+In this instance `PUID=1000` and `PGID=1000`, to find yours use `id user` as below:
 
 ```
   $ id username
-    uid=1001(dockeruser) gid=1001(dockergroup) groups=1001(dockergroup)
+    uid=1000(dockeruser) gid=1000(dockergroup) groups=1000(dockergroup)
 ```
 
 
@@ -149,9 +148,20 @@ Below are the instructions for updating containers:
 * Start the new container: `docker start jackett`
 * You can also remove the old dangling images: `docker image prune`
 
+### Via Taisun auto-updater (especially useful if you don't remember the original parameters)
+* Pull the latest image at its tag and replace it with the same env variables in one shot:
+  ```
+  docker run --rm \
+  -v /var/run/docker.sock:/var/run/docker.sock taisun/updater \
+  --oneshot jackett
+  ```
+* You can also remove the old dangling images: `docker image prune`
+
 ### Via Docker Compose
-* Update the image: `docker-compose pull linuxserver/jackett`
-* Let compose update containers as necessary: `docker-compose up -d`
+* Update all images: `docker-compose pull`
+  * or update a single image: `docker-compose pull jackett`
+* Let compose update all containers as necessary: `docker-compose up -d`
+  * or update a single container: `docker-compose up -d jackett`
 * You can also remove the old dangling images: `docker image prune`
 
 ## Versions
