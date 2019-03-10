@@ -54,6 +54,7 @@ app_setup_block: |
 # changelog
 
 changelogs:
+  - { date: "10.03.19:", desc: "Switch to net-core builds of jackett, not dependant on mono and smaller images." }
   - { date: "11.02.19:", desc: "Add pipeline logic and multi arch." }
   - { date: "11.06.18:", desc: "Ensure root ownership of Jackett files." }
   - { date: "13.12.17:", desc: "Fix continuation lines." }

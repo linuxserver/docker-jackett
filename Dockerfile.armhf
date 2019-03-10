@@ -1,4 +1,4 @@
-FROM lsiobase/mono.armhf:5.14
+FROM lsiobase/ubuntu.armhf:bionic
 
 # Add qemu to build on x86_64 systems
 COPY qemu-arm-static /usr/bin
@@ -10,6 +10,11 @@ ARG JACKETT_RELEASE
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="sparklyballs"
 
+# arch settings, uncomment as neccesary
+# ARG JACKETT_ARCH="LinuxAMDx64"
+ARG JACKETT_ARCH="LinuxARM32"
+# ARG JACKETT_ARCH="LinuxARM64"
+
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV XDG_DATA_HOME="/config" \
@@ -19,20 +24,20 @@ RUN \
  echo "**** install packages ****" && \
  apt-get update && \
  apt-get install -y \
-	wget \
-	jq && \
+	jq \
+	libicu60 \
+	libssl1.0 \
+	wget && \
  echo "**** install jackett ****" && \
  mkdir -p \
 	/app/Jackett && \
  if [ -z ${JACKETT_RELEASE+x} ]; then \
 	JACKETT_RELEASE=$(curl -sX GET "https://api.github.com/repos/Jackett/Jackett/releases/latest" \
-	| awk '/tag_name/{print $4;exit}' FS='[""]'); \
+	| jq -r .tag_name); \
  fi && \
- jackett_url=$(curl -s https://api.github.com/repos/Jackett/Jackett/releases/tags/"${JACKETT_RELEASE}" \
-	|jq -r '.assets[].browser_download_url' |grep Mono) && \
  curl -o \
  /tmp/jacket.tar.gz -L \
-	${jackett_url} && \
+	"https://github.com/Jackett/Jackett/releases/download/${JACKETT_RELEASE}/Jackett.Binaries.${JACKETT_ARCH}.tar.gz" && \
  tar xf \
  /tmp/jacket.tar.gz -C \
 	/app/Jackett --strip-components=1 && \
