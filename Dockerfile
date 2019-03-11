@@ -29,8 +29,8 @@ RUN \
  mkdir -p \
 	/app/Jackett && \
  if [ -z ${JACKETT_RELEASE+x} ]; then \
-	JACKETT_RELEASE=$(curl -sX GET "https://api.github.com/repos/Jackett/Jackett/releases/latest" \
-	| jq -r .tag_name); \
+	JACKETT_RELEASE=$(curl -sX GET "https://api.github.com/repos/Jackett/Jackett/releases" \
+	| jq -r '.[0] | .tag_name'); \
  fi && \
  curl -o \
  /tmp/jacket.tar.gz -L \

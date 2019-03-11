@@ -14,8 +14,12 @@ available_architectures:
   - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
   - { arch: "{{ arch_armhf }}", tag: "arm32v6-latest"}
 
+
 # development version
-development_versions: false
+development_versions: true
+development_versions_items:
+  - { tag: "latest", desc: "Stable Jackett Releases" }
+  - { tag: "development", desc: "Latest Jackett Releases" }
 
 # container parameters
 common_param_env_vars_enabled: true
