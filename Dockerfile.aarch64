@@ -33,7 +33,7 @@ RUN \
 	/app/Jackett && \
  if [ -z ${JACKETT_RELEASE+x} ]; then \
 	JACKETT_RELEASE=$(curl -sX GET "https://api.github.com/repos/Jackett/Jackett/releases" \
-	| jq -r 'first(.[] | .tag_name)'); \
+	| jq -r '.[0] | .tag_name'); \
  fi && \
  curl -o \
  /tmp/jacket.tar.gz -L \
