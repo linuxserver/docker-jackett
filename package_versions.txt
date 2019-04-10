@@ -126,5 +126,5 @@ tar1.29b-2ubuntu0.1
 tzdata2018i-0ubuntu0.18.04
 ubuntu-keyring2018.09.18.1~18.04.0
 util-linux2.31.1-0.4ubuntu3.3
-wget1.19.4-1ubuntu2.1
+wget1.19.4-1ubuntu2.2
 zlib1g1:1.2.11.dfsg-0ubuntu2
