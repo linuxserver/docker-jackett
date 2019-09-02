@@ -27,8 +27,8 @@ Find us at:
 [![GitHub Release](https://img.shields.io/github/release/linuxserver/docker-jackett.svg?style=flat-square&color=E68523)](https://github.com/linuxserver/docker-jackett/releases)
 [![MicroBadger Layers](https://img.shields.io/microbadger/layers/linuxserver/jackett.svg?style=flat-square&color=E68523)](https://microbadger.com/images/linuxserver/jackett "Get your own version badge on microbadger.com")
 [![MicroBadger Size](https://img.shields.io/microbadger/image-size/linuxserver/jackett.svg?style=flat-square&color=E68523)](https://microbadger.com/images/linuxserver/jackett "Get your own version badge on microbadger.com")
-[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/jackett.svg?style=flat-square&color=E68523)](https://hub.docker.com/r/linuxserver/jackett/jackett)
-[![Docker Stars](https://img.shields.io/docker/stars/linuxserver/jackett.svg?style=flat-square&color=E68523)](https://hub.docker.com/r/linuxserver/jackett/jackett)
+[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/jackett.svg?style=flat-square&color=E68523)](https://hub.docker.com/r/linuxserver/jackett)
+[![Docker Stars](https://img.shields.io/docker/stars/linuxserver/jackett.svg?style=flat-square&color=E68523)](https://hub.docker.com/r/linuxserver/jackett)
 [![Build Status](https://ci.linuxserver.io/view/all/job/Docker-Pipeline-Builders/job/docker-jackett/job/master/badge/icon?style=flat-square)](https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-jackett/job/master/)
 [![](https://lsio-ci.ams3.digitaloceanspaces.com/linuxserver/jackett/latest/badge.svg)](https://lsio-ci.ams3.digitaloceanspaces.com/linuxserver/jackett/latest/index.html)
 
