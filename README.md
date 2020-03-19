@@ -122,7 +122,6 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-v /config` | Where Jackett should store its config file. |
 | `-v /downloads` | Path to torrent blackhole. |
 
-
 ## Environment variables from files (Docker secrets)
 
 You can set any environment variable from a file by using a special prepend `FILE__`. 
