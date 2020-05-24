@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 
-if [ "${AUTO_UPDATE}" == "true" ]; then
+if [ -z ${AUTO_UPDATE+x} ] || [ "${AUTO_UPDATE}" == "true" ]; then
 	COMMAND="/app/Jackett/jackett_launcher.sh"
 else
 	COMMAND="/app/Jackett/jackett --NoUpdates"
