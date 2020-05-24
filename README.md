@@ -120,7 +120,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London. |
-| `-e AUTO_UPDATE=true` | Allow Jackett to update inside of the container (currently recommended by Jacket) |
+| `-e AUTO_UPDATE=true` | Allow Jackett to update inside of the container (currently recommended by Jackett and enabled by default) |
 | `-e RUN_OPTS=<run options here>` | Optionally specify additional arguments to be passed. EG. `--ProxyConnection=10.0.0.100:1234`. |
 | `-v /config` | Where Jackett should store its config file. |
 | `-v /downloads` | Path to torrent blackhole. |
