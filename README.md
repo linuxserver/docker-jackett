@@ -75,6 +75,7 @@ docker create \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/London \
+  -e AUTO_UPDATE=true `#optional` \
   -e RUN_OPTS=<run options here> `#optional` \
   -p 9117:9117 \
   -v <path to data>:/config \
@@ -99,6 +100,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
+      - AUTO_UPDATE=true #optional
       - RUN_OPTS=<run options here> #optional
     volumes:
       - <path to data>:/config
@@ -118,6 +120,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London. |
+| `-e AUTO_UPDATE=true` | Allow Jackett to update inside of the container (currently recommended by Jacket) |
 | `-e RUN_OPTS=<run options here>` | Optionally specify additional arguments to be passed. EG. `--ProxyConnection=10.0.0.100:1234`. |
 | `-v /config` | Where Jackett should store its config file. |
 | `-v /downloads` | Path to torrent blackhole. |
@@ -227,6 +230,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **24.05.20:** - Allow user to optionally enable auto updates.
 * **31.12.19:** - Remove agressive startup chowning.
 * **23.03.19:** - Switching to new Base images, shift to arm32v7 tag.
 * **10.03.19:** - Switch to net-core builds of jackett, not dependant on mono and smaller images.
