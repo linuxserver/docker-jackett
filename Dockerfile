@@ -17,9 +17,7 @@ RUN \
  apt-get update && \
  apt-get install -y \
 	jq \
-	libicu60 \
-	libssl1.0 \
-	wget && \
+	libicu60 && \
  echo "**** install jackett ****" && \
  mkdir -p \
 	/app/Jackett && \
@@ -42,7 +40,8 @@ RUN \
  rm -rf \
 	/tmp/* \
 	/var/lib/apt/lists/* \
-	/var/tmp/*
+	/var/tmp/* \
+	/var/log/*
 
 # add local files
 COPY root/ /
