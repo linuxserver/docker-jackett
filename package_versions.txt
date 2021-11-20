@@ -95,8 +95,6 @@ libsepol12.7-1
 libsmartcols12.31.1-0.4ubuntu3.7
 libsqlite3-03.22.0-1ubuntu0.4
 libss21.44.1-1ubuntu1.3
-libssl1.0.01.0.2n-1ubuntu5.7
-libssl1.0-dev1.0.2n-1ubuntu5.7
 libssl1.11.1.1-1ubuntu2.1~18.04.13
 libstdc++68.4.0-1ubuntu1~18.04
 libsystemd0237-3ubuntu10.52
@@ -126,5 +124,4 @@ tar1.29b-2ubuntu0.2
 tzdata2021e-0ubuntu0.18.04
 ubuntu-keyring2018.09.18.1~18.04.2
 util-linux2.31.1-0.4ubuntu3.7
-wget1.19.4-1ubuntu2.2
 zlib1g1:1.2.11.dfsg-0ubuntu2
