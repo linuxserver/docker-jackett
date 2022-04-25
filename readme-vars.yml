@@ -58,6 +58,7 @@ app_setup_block: |
 # changelog
 
 changelogs:
+  - { date: "25.04.22:", desc: "Rebase to Ubuntu Jammy." }
   - { date: "31.12.19:", desc: "Remove agressive startup chowning." }
   - { date: "23.03.19:", desc: "Switching to new Base images, shift to arm32v7 tag." }
   - { date: "10.03.19:", desc: "Switch to net-core builds of jackett, not dependant on mono and smaller images." }
