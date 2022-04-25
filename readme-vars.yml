@@ -58,6 +58,7 @@ app_setup_block: |
 # changelog
 
 changelogs:
+  - { date: "25.04.22:", desc: "Rebase to Ubuntu Jammy." }
   - { date: "24.05.20:", desc: "Allow user to optionally enable auto updates." }
   - { date: "31.12.19:", desc: "Remove agressive startup chowning." }
   - { date: "23.03.19:", desc: "Switching to new Base images, shift to arm32v7 tag." }
