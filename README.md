@@ -242,6 +242,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **10.05.22:** - Rebase to Ubuntu Focal.
 * **24.05.20:** - Allow user to optionally enable auto updates.
 * **31.12.19:** - Remove agressive startup chowning.
 * **23.03.19:** - Switching to new Base images, shift to arm32v7 tag.
