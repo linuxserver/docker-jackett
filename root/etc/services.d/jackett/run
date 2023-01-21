@@ -7,4 +7,4 @@ else
 fi
 
 exec \
-    s6-setuidgid abc "${COMMAND}" ${RUN_OPTS}
+    s6-setuidgid abc ${COMMAND} ${RUN_OPTS}
