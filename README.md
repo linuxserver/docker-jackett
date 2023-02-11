@@ -71,8 +71,6 @@ This image provides various versions that are available via tags. Please read th
 The web interface is at `<your-ip>:9117` , configure various trackers and connections to other apps there.
 More info at [Jackett](https://github.com/Jackett/Jackett).
 
-Disable autoupdates in the webui to prevent jackett crashing, the image is refreshed when new versions are released.
-
 ## Usage
 
 Here are some example snippets to help you get started creating a container.
@@ -239,7 +237,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **11.02.23:** - Rebase to Alpine 3.17.
+* **11.02.23:** - Rebase to Alpine 3.17, migrate to s6v3.
 * **31.12.19:** - Rebase to Focal.
 * **31.12.19:** - Remove agressive startup chowning.
 * **23.03.19:** - Switching to new Base images, shift to arm32v7 tag.
