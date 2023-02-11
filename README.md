@@ -71,6 +71,8 @@ This image provides various versions that are available via tags. Please read th
 The web interface is at `<your-ip>:9117` , configure various trackers and connections to other apps there.
 More info at [Jackett](https://github.com/Jackett/Jackett).
 
+Disable autoupdates in the webui to prevent jackett crashing, the image is refreshed when new versions are released.
+
 ## Usage
 
 Here are some example snippets to help you get started creating a container.
@@ -89,10 +91,10 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
       - AUTO_UPDATE=true #optional
-      - RUN_OPTS= #optional
+      - "RUN_OPTS=<run options here>" #optional
     volumes:
-      - /path/to/data:/config
-      - /path/to/blackhole:/downloads
+      - <path to data>:/config
+      - <path to blackhole>:/downloads
     ports:
       - 9117:9117
     restart: unless-stopped
@@ -107,10 +109,10 @@ docker run -d \
   -e PGID=1000 \
   -e TZ=Etc/UTC \
   -e AUTO_UPDATE=true `#optional` \
-  -e RUN_OPTS= `#optional` \
+  -e RUN_OPTS="<run options here>" `#optional` \
   -p 9117:9117 \
-  -v /path/to/data:/config \
-  -v /path/to/blackhole:/downloads \
+  -v <path to data>:/config \
+  -v <path to blackhole>:/downloads \
   --restart unless-stopped \
   lscr.io/linuxserver/jackett:latest
 
@@ -127,7 +129,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Etc/UTC` | specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
 | `-e AUTO_UPDATE=true` | Allow Jackett to update inside of the container (currently recommended by Jackett and enabled by default) |
-| `-e RUN_OPTS=` | Optionally specify additional arguments to be passed. |
+| `-e RUN_OPTS=<run options here>` | Optionally specify additional arguments to be passed. |
 | `-v /config` | Where Jackett should store its config file. |
 | `-v /downloads` | Path to torrent blackhole. |
 
@@ -240,7 +242,6 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **11.02.23:** - Rebase to Alpine 3.17, migrate to s6v3.
 * **10.05.22:** - Rebase to Ubuntu Focal.
 * **24.05.20:** - Allow user to optionally enable auto updates.
 * **31.12.19:** - Remove agressive startup chowning.
