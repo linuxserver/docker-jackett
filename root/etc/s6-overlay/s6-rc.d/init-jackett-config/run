@@ -1,0 +1,11 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+if [[ -z ${AUTO_UPDATE+x} ]] || [[ "${AUTO_UPDATE}" == "true" ]]; then
+    lsiown -R abc:abc \
+        /app/Jackett
+fi
+
+# permissions
+lsiown -R abc:abc \
+    /config

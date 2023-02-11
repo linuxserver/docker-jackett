@@ -90,10 +90,10 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
-      - "RUN_OPTS=<run options here>" #optional
+      - RUN_OPTS= #optional
     volumes:
-      - <path to data>:/config
-      - <path to blackhole>:/downloads
+      - /path/to/data:/config
+      - /path/to/blackhole:/downloads
     ports:
       - 9117:9117
     restart: unless-stopped
@@ -107,10 +107,10 @@ docker run -d \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Etc/UTC \
-  -e RUN_OPTS="<run options here>" `#optional` \
+  -e RUN_OPTS= `#optional` \
   -p 9117:9117 \
-  -v <path to data>:/config \
-  -v <path to blackhole>:/downloads \
+  -v /path/to/data:/config \
+  -v /path/to/blackhole:/downloads \
   --restart unless-stopped \
   lscr.io/linuxserver/jackett:development
 
@@ -126,7 +126,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Etc/UTC` | specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
-| `-e RUN_OPTS=<run options here>` | Optionally specify additional arguments to be passed. |
+| `-e RUN_OPTS=` | Optionally specify additional arguments to be passed. |
 | `-v /config` | Where Jackett should store its config file. |
 | `-v /downloads` | Path to torrent blackhole. |
 
@@ -239,6 +239,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **11.02.23:** - Rebase to Alpine 3.17.
 * **31.12.19:** - Rebase to Focal.
 * **31.12.19:** - Remove agressive startup chowning.
 * **23.03.19:** - Switching to new Base images, shift to arm32v7 tag.
