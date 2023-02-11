@@ -27,7 +27,7 @@ pipeline {
     DOCKERHUB_IMAGE = 'linuxserver/jackett'
     DEV_DOCKERHUB_IMAGE = 'lsiodev/jackett'
     PR_DOCKERHUB_IMAGE = 'lspipepr/jackett'
-    DIST_IMAGE = 'alpine'
+    DIST_IMAGE = 'ubuntu'
     MULTIARCH='true'
     CI='true'
     CI_WEB='true'
