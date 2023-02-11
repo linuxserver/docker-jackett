@@ -35,12 +35,8 @@ RUN \
   echo "**** save docker image version ****" && \
   echo "${VERSION}" > /etc/docker-image && \
   echo "**** cleanup ****" && \
-  apt-get clean && \
   rm -rf \
-    /tmp/* \
-    /var/lib/apt/lists/* \
-    /var/tmp/* \
-    /var/log/*
+    /tmp/*
 
 # add local files
 COPY root/ /
