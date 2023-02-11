@@ -26,7 +26,7 @@ RUN \
   fi && \
   curl -o \
     /tmp/jacket.tar.gz -L \
-    "https://github.com/Jackett/Jackett/releases/download/${JACKETT_RELEASE}/Jackett.Binaries.LinuxAMDx64.tar.gz" && \
+    "https://github.com/Jackett/Jackett/releases/download/${JACKETT_RELEASE}/Jackett.Binaries.LinuxMuslAMDx64.tar.gz" && \
   tar xf \
     /tmp/jacket.tar.gz -C \
     /app/Jackett --strip-components=1 && \
