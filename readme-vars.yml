@@ -29,8 +29,8 @@ param_env_vars:
   - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London." }
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "<path to data>", desc: "Where Jackett should store its config file." }
-  - { vol_path: "/downloads", vol_host_path: "<path to blackhole>", desc: "Path to torrent blackhole." }
+  - { vol_path: "/config", vol_host_path: "/path/to/data", desc: "Where Jackett should store its config file." }
+  - { vol_path: "/downloads", vol_host_path: "/path/to/blackhole", desc: "Path to torrent blackhole." }
 param_usage_include_ports: true
 param_ports:
   - { external_port: "9117", internal_port: "9117", port_desc: "WebUI" }
@@ -41,7 +41,7 @@ cap_add_param: false
 opt_param_usage_include_env: true
 opt_param_env_vars:
   - { env_var: "AUTO_UPDATE", env_value: "true", desc: "Allow Jackett to update inside of the container (currently recommended by Jackett and enabled by default)" }
-  - { env_var: "RUN_OPTS", env_value: "<run options here>", desc: "Optionally specify additional arguments to be passed." }
+  - { env_var: "RUN_OPTS", env_value: "", desc: "Optionally specify additional arguments to be passed." }
 opt_param_usage_include_vols: false
 opt_param_usage_include_ports: false
 opt_param_device_map: false
@@ -58,6 +58,7 @@ app_setup_block: |
 # changelog
 
 changelogs:
+  - { date: "11.02.23:", desc: "Rebase to Alpine 3.17, migrate to s6v3." }
   - { date: "10.05.22:", desc: "Rebase to Ubuntu Focal." }
   - { date: "24.05.20:", desc: "Allow user to optionally enable auto updates." }
   - { date: "31.12.19:", desc: "Remove agressive startup chowning." }
