@@ -11,7 +11,7 @@ ca-certificates-20220614-r4
 ca-certificates-bundle-20220614-r4
 coreutils-9.1-r0
 curl-7.87.0-r1
-icu-data-en-72.1-r1
+icu-data-full-72.1-r1
 icu-libs-72.1-r1
 jq-1.6-r2
 libacl-2.3.1-r1
