@@ -57,6 +57,7 @@ app_setup_block: |
 # changelog
 
 changelogs:
+  - { date: "13.02.23:", desc: "Add icu-data-full to address [ICU issue](https://github.com/Jackett/Jackett/issues/14008) with Cyrillic character sets." }
   - { date: "11.02.23:", desc: "Rebase to Alpine 3.17, migrate to s6v3." }
   - { date: "31.12.19:", desc: "Rebase to Focal." }
   - { date: "31.12.19:", desc: "Remove agressive startup chowning." }
