@@ -237,6 +237,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **13.02.23:** - Add icu-data-full to address [ICU issue](https://github.com/Jackett/Jackett/issues/14008) with Cyrillic character sets.
 * **11.02.23:** - Rebase to Alpine 3.17, migrate to s6v3.
 * **31.12.19:** - Rebase to Focal.
 * **31.12.19:** - Remove agressive startup chowning.
