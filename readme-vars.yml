@@ -57,7 +57,7 @@ app_setup_block: |
 # changelog
 
 changelogs:
-  - { date: "13.02.23:", desc: "Rebase to Alpine 3.16 to mitigate [ICU issue](https://github.com/Jackett/Jackett/issues/14008)." }
+  - { date: "13.02.23:", desc: "Add icu-data-full to address [ICU issue](https://github.com/Jackett/Jackett/issues/14008) with Cyrillic character sets." }
   - { date: "11.02.23:", desc: "Rebase to Alpine 3.17, migrate to s6v3." }
   - { date: "10.05.22:", desc: "Rebase to Ubuntu Focal." }
   - { date: "24.05.20:", desc: "Allow user to optionally enable auto updates." }

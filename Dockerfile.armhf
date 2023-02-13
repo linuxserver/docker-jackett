@@ -16,6 +16,7 @@ XDG_CONFIG_HOME="/config"
 RUN \
   echo "**** install packages ****" && \
   apk --no-cache add \
+    icu-data-full \
     icu-libs && \
   echo "**** install jackett ****" && \
   mkdir -p \
