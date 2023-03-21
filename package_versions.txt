@@ -7,7 +7,7 @@ Autofac.Extensions.DependencyInjection                 8.0.0                  do
 BencodeNET                                             4.0.0                  dotnet  
 CommandLineParser                                      2.9.1                  dotnet  
 DotNet4.SocksProxy                                     1.4.0.1                dotnet  
-FlareSolverrSharp                                      3.0.4                  dotnet  
+FlareSolverrSharp                                      3.0.5                  dotnet  
 Microsoft.AspNetCore.Http                              2.2.2                  dotnet  
 Microsoft.AspNetCore.Http.Abstractions                 2.2.0                  dotnet  
 Microsoft.AspNetCore.Http.Features                     2.2.0                  dotnet  
@@ -69,7 +69,7 @@ busybox-binsh                                          1.35.0-r29             ap
 ca-certificates                                        20220614-r4            apk     
 ca-certificates-bundle                                 20220614-r4            apk     
 coreutils                                              9.1-r0                 apk     
-curl                                                   7.88.1-r0              apk     
+curl                                                   7.88.1-r1              apk     
 icu-data-full                                          72.1-r1                apk     
 icu-libs                                               72.1-r1                apk     
 jq                                                     1.6-r2                 apk     
@@ -78,7 +78,7 @@ libattr                                                2.5.1-r2               ap
 libbsd                                                 0.11.7-r0              apk     
 libc-utils                                             0.7.2-r3               apk     
 libcrypto3                                             3.0.8-r0               apk     
-libcurl                                                7.88.1-r0              apk     
+libcurl                                                7.88.1-r1              apk     
 libgcc                                                 12.2.1_git20220924-r4  apk     
 libintl                                                0.21.1-r1              apk     
 libmd                                                  1.0.4-r0               apk     
