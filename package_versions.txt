@@ -7,7 +7,7 @@ Autofac.Extensions.DependencyInjection                 8.0.0                  do
 BencodeNET                                             4.0.0                  dotnet  
 CommandLineParser                                      2.9.1                  dotnet  
 DotNet4.SocksProxy                                     1.4.0.1                dotnet  
-FlareSolverrSharp                                      3.0.4                  dotnet  
+FlareSolverrSharp                                      3.0.5                  dotnet  
 Microsoft.AspNetCore.Http                              2.2.2                  dotnet  
 Microsoft.AspNetCore.Http.Abstractions                 2.2.0                  dotnet  
 Microsoft.AspNetCore.Http.Features                     2.2.0                  dotnet  
