@@ -88,6 +88,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
+      - AUTO_UPDATE=true #optional
       - RUN_OPTS= #optional
     volumes:
       - /path/to/data:/config
@@ -105,6 +106,7 @@ docker run -d \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Etc/UTC \
+  -e AUTO_UPDATE=true `#optional` \
   -e RUN_OPTS= `#optional` \
   -p 9117:9117 \
   -v /path/to/data:/config \
@@ -124,6 +126,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Etc/UTC` | specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
+| `-e AUTO_UPDATE=true` | Allow Jackett to update inside of the container (currently recommended by Jackett and enabled by default) |
 | `-e RUN_OPTS=` | Optionally specify additional arguments to be passed. |
 | `-v /config` | Where Jackett should store its config file. |
 | `-v /downloads` | Path to torrent blackhole. |
