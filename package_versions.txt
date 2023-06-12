@@ -35,7 +35,7 @@ Mono.Unix                                              7.1.0-final.1.21458.1  do
 NLog                                                   5.1.2                  dotnet  
 NLog.Extensions.Logging                                5.2.1                  dotnet  
 NLog.Web.AspNetCore                                    5.2.1                  dotnet  
-Newtonsoft.Json                                        13.0.2                 dotnet  
+Newtonsoft.Json                                        13.0.3                 dotnet  
 Newtonsoft.Json.Bson                                   1.0.2                  dotnet  
 Polly                                                  7.2.3                  dotnet  
 SharpZipLib                                            1.4.2                  dotnet  
