@@ -7,72 +7,65 @@ project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/ma
 project_blurb: "[{{ project_name|capitalize }}]({{ project_url }}) works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software. This allows for getting recent uploads (like RSS) and performing searches. Jackett is a single repository of maintained indexer scraping & translation logic - removing the burden from other apps."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
 project_blurb_optional_extras_enabled: false
-
 # supported architectures
 available_architectures:
-  - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
-  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
-  - { arch: "{{ arch_armhf }}", tag: "arm32v7-latest"}
-
+  - {arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
+  - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
 # development version
 development_versions: true
 development_versions_items:
-  - { tag: "latest", desc: "Stable Jackett Releases" }
-  - { tag: "development", desc: "Latest Jackett Releases" }
-
+  - {tag: "latest", desc: "Stable Jackett Releases"}
+  - {tag: "development", desc: "Latest Jackett Releases"}
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
 param_usage_include_net: false
 param_usage_include_env: true
 param_env_vars:
-  - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London." }
+  - {env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London."}
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/data", desc: "Where Jackett should store its config file." }
-  - { vol_path: "/downloads", vol_host_path: "/path/to/blackhole", desc: "Path to torrent blackhole." }
+  - {vol_path: "/config", vol_host_path: "/path/to/data", desc: "Where Jackett should store its config file."}
+  - {vol_path: "/downloads", vol_host_path: "/path/to/blackhole", desc: "Path to torrent blackhole."}
 param_usage_include_ports: true
 param_ports:
-  - { external_port: "9117", internal_port: "9117", port_desc: "WebUI" }
+  - {external_port: "9117", internal_port: "9117", port_desc: "WebUI"}
 param_device_map: false
 cap_add_param: false
-
 # optional container parameters
 opt_param_usage_include_env: true
 opt_param_env_vars:
-  - { env_var: "AUTO_UPDATE", env_value: "true", desc: "Allow Jackett to update inside of the container (currently recommended by Jackett and enabled by default)" }
-  - { env_var: "RUN_OPTS", env_value: "", desc: "Optionally specify additional arguments to be passed." }
+  - {env_var: "AUTO_UPDATE", env_value: "true", desc: "Allow Jackett to update inside of the container (currently recommended by Jackett and enabled by default)"}
+  - {env_var: "RUN_OPTS", env_value: "", desc: "Optionally specify additional arguments to be passed."}
 opt_param_usage_include_vols: false
 opt_param_usage_include_ports: false
 opt_param_device_map: false
 opt_cap_add_param: false
 optional_block_1: false
-
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
   The web interface is at `<your-ip>:9117` , configure various trackers and connections to other apps there.
   More info at [{{ project_name|capitalize }}]({{ project_url }}).
-
 # changelog
-
 changelogs:
-  - { date: "13.02.23:", desc: "Add icu-data-full to address [ICU issue](https://github.com/Jackett/Jackett/issues/14008) with Cyrillic character sets." }
-  - { date: "11.02.23:", desc: "Rebase to Alpine 3.17, migrate to s6v3." }
-  - { date: "10.05.22:", desc: "Rebase to Ubuntu Focal." }
-  - { date: "24.05.20:", desc: "Allow user to optionally enable auto updates." }
-  - { date: "31.12.19:", desc: "Remove agressive startup chowning." }
-  - { date: "23.03.19:", desc: "Switching to new Base images, shift to arm32v7 tag." }
-  - { date: "10.03.19:", desc: "Switch to net-core builds of jackett, not dependant on mono and smaller images." }
-  - { date: "11.02.19:", desc: "Add pipeline logic and multi arch." }
-  - { date: "11.06.18:", desc: "Ensure root ownership of Jackett files." }
-  - { date: "13.12.17:", desc: "Fix continuation lines." }
-  - { date: "17.04.17:", desc: "Switch to using inhouse mono baseimage, ubuntu xenial based." }
-  - { date: "09.02.17:", desc: "Rebase to alpine 3.5." }
-  - { date: "29.10.16:", desc: "Call python2 from edge main to satisfy new mono dependency." }
-  - { date: "14.10.16:", desc: "Add version layer information." }
-  - { date: "22.09.16:", desc: "Remove autoupdate, tidy up Dockerfile." }
-  - { date: "10.09.16:", desc: "Add layer badges to README." }
-  - { date: "28.08.16:", desc: "Add badges to README." }
-  - { date: "06.08.16:", desc: "Rebase to alpine linux for smaller image." }
-  - { date: "25.01.16:", desc: "Initial Release." }
+  - {date: "01.07.23:", desc: "Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)"}
+  - {date: "13.02.23:", desc: "Add icu-data-full to address [ICU issue](https://github.com/Jackett/Jackett/issues/14008) with Cyrillic character sets."}
+  - {date: "11.02.23:", desc: "Rebase to Alpine 3.17, migrate to s6v3."}
+  - {date: "10.05.22:", desc: "Rebase to Ubuntu Focal."}
+  - {date: "24.05.20:", desc: "Allow user to optionally enable auto updates."}
+  - {date: "31.12.19:", desc: "Remove agressive startup chowning."}
+  - {date: "23.03.19:", desc: "Switching to new Base images, shift to arm32v7 tag."}
+  - {date: "10.03.19:", desc: "Switch to net-core builds of jackett, not dependant on mono and smaller images."}
+  - {date: "11.02.19:", desc: "Add pipeline logic and multi arch."}
+  - {date: "11.06.18:", desc: "Ensure root ownership of Jackett files."}
+  - {date: "13.12.17:", desc: "Fix continuation lines."}
+  - {date: "17.04.17:", desc: "Switch to using inhouse mono baseimage, ubuntu xenial based."}
+  - {date: "09.02.17:", desc: "Rebase to alpine 3.5."}
+  - {date: "29.10.16:", desc: "Call python2 from edge main to satisfy new mono dependency."}
+  - {date: "14.10.16:", desc: "Add version layer information."}
+  - {date: "22.09.16:", desc: "Remove autoupdate, tidy up Dockerfile."}
+  - {date: "10.09.16:", desc: "Add layer badges to README."}
+  - {date: "28.08.16:", desc: "Add badges to README."}
+  - {date: "06.08.16:", desc: "Rebase to alpine linux for smaller image."}
+  - {date: "25.01.16:", desc: "Initial Release."}
