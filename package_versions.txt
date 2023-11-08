@@ -1,5 +1,4 @@
 NAME                                                        VERSION                 TYPE   
-                                                            7.100.21.45801          dotnet  
 AngleSharp                                                  1.0.0.0                 dotnet  
 AngleSharp.Xml                                              0.17.0.0                dotnet  
 AutoMapper                                                  10.1.1.0                dotnet  
@@ -7,13 +6,13 @@ Autofac                                                     6.5.0.0             
 Autofac.Extensions.DependencyInjection                      8.0.0.0                 dotnet  
 BencodeNET                                                  1.0.0.0                 dotnet  
 CommandLine                                                 2.9.1.0                 dotnet  
-DateTimeRoutines                                            0.21.1155               dotnet  
+DateTimeRoutines                                            0.21.1172               dotnet  
 FlareSolverrSharp                                           3.0.5.0                 dotnet  
 ICSharpCode.SharpZipLib                                     1.4.2.13                dotnet  
-Jackett.Common                                              0.21.1155               dotnet  
-JackettUpdater                                              0.21.1155               dotnet  
-Json.NET .NET 6.0                                           13.0.3.27908            dotnet  
-Json.NET BSON .NET Standard 2.0                             1.0.2.22727             dotnet  
+Jackett.Common                                              0.21.1172               dotnet  
+JackettUpdater                                              0.21.1172               dotnet  
+Json.NET.NET6.0                                             13.0.3.27908            dotnet  
+Json.NETBSON.NETStandard2.0                                 1.0.2.22727             dotnet  
 Microsoft.AspNetCore                                        6.0.2423.51812          dotnet  
 Microsoft.AspNetCore.Antiforgery                            6.0.2423.51812          dotnet  
 Microsoft.AspNetCore.Authentication                         6.0.2423.51812          dotnet  
@@ -148,10 +147,11 @@ Microsoft.VisualBasic.Core                                  11.100.2423.51814   
 Microsoft.Win32.Primitives                                  6.0.2423.51814          dotnet  
 Microsoft.Win32.Registry                                    6.0.2423.51814          dotnet  
 MimeMapping                                                 1.0.1.50                dotnet  
+Mono.Posix                                                  7.100.21.45801          dotnet  
 Mono.Unix.dll                                               7.100.21.45801          dotnet  
-NLog for NetStandard 2.0                                    5.1.2.1561              dotnet  
-NLog.Extensions.Logging for .NET 6                          5.2.1.300               dotnet  
+NLog.Extensions.Loggingfor.NET6                             5.2.1.300               dotnet  
 NLog.Web.AspNetCore                                         5.2.1.786               dotnet  
+NLogforNetStandard2.0                                       5.1.2.1561              dotnet  
 Org.Mentalis                                                1.0.0.0                 dotnet  
 Polly                                                       7.2.3.0                 dotnet  
 SocksWebProxy                                               1.4.0.1                 dotnet  
@@ -334,7 +334,7 @@ coreutils                                                   9.3-r1              
 curl                                                        8.4.0-r0                apk     
 icu-data-full                                               73.2-r2                 apk     
 icu-libs                                                    73.2-r2                 apk     
-jackett                                                     0.21.1155               dotnet  
+jackett                                                     0.21.1172               dotnet  
 jq                                                          1.6-r3                  apk     
 libacl                                                      2.3.1-r3                apk     
 libattr                                                     2.5.1-r4                apk     
