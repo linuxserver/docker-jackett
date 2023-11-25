@@ -6,11 +6,11 @@ Autofac                                                     6.5.0.0             
 Autofac.Extensions.DependencyInjection                      8.0.0.0                 dotnet  
 BencodeNET                                                  1.0.0.0                 dotnet  
 CommandLine                                                 2.9.1.0                 dotnet  
-DateTimeRoutines                                            0.21.1253               dotnet  
+DateTimeRoutines                                            0.21.1256               dotnet  
 FlareSolverrSharp                                           3.0.5.0                 dotnet  
 ICSharpCode.SharpZipLib                                     1.4.2.13                dotnet  
-Jackett.Common                                              0.21.1253               dotnet  
-JackettUpdater                                              0.21.1253               dotnet  
+Jackett.Common                                              0.21.1256               dotnet  
+JackettUpdater                                              0.21.1256               dotnet  
 Json.NET.NET6.0                                             13.0.3.27908            dotnet  
 Json.NETBSON.NETStandard2.0                                 1.0.2.22727             dotnet  
 Microsoft.AspNetCore                                        6.0.2523.52315          dotnet  
@@ -334,7 +334,7 @@ coreutils                                                   9.3-r1              
 curl                                                        8.4.0-r0                apk     
 icu-data-full                                               73.2-r2                 apk     
 icu-libs                                                    73.2-r2                 apk     
-jackett                                                     0.21.1253               dotnet  
+jackett                                                     0.21.1256               dotnet  
 jq                                                          1.6-r3                  apk     
 libacl                                                      2.3.1-r3                apk     
 libattr                                                     2.5.1-r4                apk     
