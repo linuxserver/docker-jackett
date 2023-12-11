@@ -6,11 +6,11 @@ Autofac                                                     6.5.0.0             
 Autofac.Extensions.DependencyInjection                      8.0.0.0                 dotnet  
 BencodeNET                                                  1.0.0.0                 dotnet  
 CommandLine                                                 2.9.1.0                 dotnet  
-DateTimeRoutines                                            0.21.1333               dotnet  
+DateTimeRoutines                                            0.21.1344               dotnet  
 FlareSolverrSharp                                           3.0.5.0                 dotnet  
 ICSharpCode.SharpZipLib                                     1.4.2.13                dotnet  
-Jackett.Common                                              0.21.1333               dotnet  
-JackettUpdater                                              0.21.1333               dotnet  
+Jackett.Common                                              0.21.1344               dotnet  
+JackettUpdater                                              0.21.1344               dotnet  
 Json.NET.NET6.0                                             13.0.3.27908            dotnet  
 Json.NETBSON.NETStandard2.0                                 1.0.2.22727             dotnet  
 Microsoft.AspNetCore                                        6.0.2523.52315          dotnet  
@@ -95,6 +95,8 @@ Microsoft.AspNetCore.SignalR.Protocols.Json                 6.0.2523.52315      
 Microsoft.AspNetCore.StaticFiles                            6.0.2523.52315          dotnet  
 Microsoft.AspNetCore.WebSockets                             6.0.2523.52315          dotnet  
 Microsoft.AspNetCore.WebUtilities                           6.0.2523.52315          dotnet  
+Microsoft.Bcl.AsyncInterfaces                               6.0.21.52210            dotnet  
+Microsoft.Bcl.TimeProvider                                  8.0.23.53103            dotnet  
 Microsoft.CSharp                                            6.0.2523.51912          dotnet  
 Microsoft.Extensions.Caching.Abstractions                   6.0.21.52210            dotnet  
 Microsoft.Extensions.Caching.Memory                         6.0.222.6406            dotnet  
@@ -153,7 +155,8 @@ NLog.Extensions.Loggingfor.NET6                             5.2.1.300           
 NLog.Web.AspNetCore                                         5.2.1.786               dotnet  
 NLogforNetStandard2.0                                       5.1.2.1561              dotnet  
 Org.Mentalis                                                1.0.0.0                 dotnet  
-Polly                                                       7.2.3.0                 dotnet  
+Polly                                                       8.2.0.2702              dotnet  
+Polly.Core                                                  8.2.0.2702              dotnet  
 SocksWebProxy                                               1.4.0.1                 dotnet  
 System                                                      6.0.2523.51912          dotnet  
 System.AppContext                                           6.0.2523.51912          dotnet  
@@ -334,7 +337,7 @@ coreutils                                                   9.3-r1              
 curl                                                        8.5.0-r0                apk     
 icu-data-full                                               73.2-r2                 apk     
 icu-libs                                                    73.2-r2                 apk     
-jackett                                                     0.21.1333               dotnet  
+jackett                                                     0.21.1344               dotnet  
 jq                                                          1.6-r4                  apk     
 libacl                                                      2.3.1-r3                apk     
 libattr                                                     2.5.1-r4                apk     
