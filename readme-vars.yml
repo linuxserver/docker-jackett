@@ -10,6 +10,7 @@ project_blurb_optional_extras_enabled: false
 project_deprecation_status: true
 project_deprecation_message: |
   Jackett has a bot publishing nightly stable releases
+  Please switch to latest tag for stable
 # supported architectures
 available_architectures:
   - {arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
