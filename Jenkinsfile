@@ -68,7 +68,7 @@ pipeline {
           env.CODE_URL = 'https://github.com/' + env.LS_USER + '/' + env.LS_REPO + '/commit/' + env.GIT_COMMIT
           env.DOCKERHUB_LINK = 'https://hub.docker.com/r/' + env.DOCKERHUB_IMAGE + '/tags/'
           env.PULL_REQUEST = env.CHANGE_ID
-          env.TEMPLATED_FILES = 'Jenkinsfile README.md LICENSE .editorconfig ./.github/CONTRIBUTING.md ./.github/FUNDING.yml ./.github/ISSUE_TEMPLATE/config.yml ./.github/ISSUE_TEMPLATE/issue.bug.yml ./.github/ISSUE_TEMPLATE/issue.feature.yml ./.github/PULL_REQUEST_TEMPLATE.md ./.github/workflows/external_trigger_scheduler.yml ./.github/workflows/greetings.yml ./.github/workflows/package_trigger_scheduler.yml ./.github/workflows/call_issue_pr_tracker.yml ./.github/workflows/call_issues_cron.yml ./.github/workflows/permissions.yml ./.github/workflows/external_trigger.yml ./.github/workflows/package_trigger.yml'
+          env.TEMPLATED_FILES = 'Jenkinsfile README.md LICENSE .editorconfig ./.github/CONTRIBUTING.md ./.github/FUNDING.yml ./.github/ISSUE_TEMPLATE/config.yml ./.github/ISSUE_TEMPLATE/issue.bug.yml ./.github/ISSUE_TEMPLATE/issue.feature.yml ./.github/PULL_REQUEST_TEMPLATE.md ./root/etc/cont-init.d/99-deprecation'
         }
         sh '''#! /bin/bash
               echo "The default github branch detected as ${GH_DEFAULT_BRANCH}" '''
@@ -299,6 +299,7 @@ pipeline {
               fi
               # Stage 2 - Delete old templates
               OLD_TEMPLATES=".github/ISSUE_TEMPLATE.md .github/ISSUE_TEMPLATE/issue.bug.md .github/ISSUE_TEMPLATE/issue.feature.md .github/workflows/call_invalid_helper.yml .github/workflows/stale.yml Dockerfile.armhf"
+              OLD_TEMPLATES="${OLD_TEMPLATES} $(echo .github/workflows/{external_trigger,external_trigger_scheduler,package_trigger,package_trigger_scheduler,call_issue_pr_tracker,call_issues_cron}.yml)"
               for i in ${OLD_TEMPLATES}; do
                 if [[ -f "${i}" ]]; then
                   TEMPLATES_TO_DELETE="${i} ${TEMPLATES_TO_DELETE}"
@@ -334,6 +335,14 @@ pipeline {
                 cd ${TEMPDIR}/docker-${CONTAINER_NAME}
                 mkdir -p ${TEMPDIR}/repo/${LS_REPO}/.github/workflows
                 mkdir -p ${TEMPDIR}/repo/${LS_REPO}/.github/ISSUE_TEMPLATE
+                if [[ -d "${TEMPDIR}/repo/${LS_REPO}/root/etc/s6-overlay/s6-rc.d" ]]; then
+                  mkdir -p \
+                    ${TEMPDIR}/repo/${LS_REPO}/root/etc/s6-overlay/s6-rc.d/init-deprecate/dependencies.d \
+                    ${TEMPDIR}/repo/${LS_REPO}/root/etc/s6-overlay/s6-rc.d/init-services/dependencies.d \
+                    ${TEMPDIR}/repo/${LS_REPO}/root/etc/s6-overlay/s6-rc.d/user/contents.d
+                else
+                  mkdir -p ${TEMPDIR}/repo/${LS_REPO}/root/etc/cont-init.d
+                fi
                 cp --parents ${TEMPLATED_FILES} ${TEMPDIR}/repo/${LS_REPO}/ || :
                 cp --parents readme-vars.yml ${TEMPDIR}/repo/${LS_REPO}/ || :
                 cd ${TEMPDIR}/repo/${LS_REPO}/
@@ -357,6 +366,18 @@ pipeline {
                 GH_DOCS_DEFAULT_BRANCH=$(git remote show origin | grep "HEAD branch:" | sed 's|.*HEAD branch: ||')
                 git add docs/images/docker-${CONTAINER_NAME}.md
                 git commit -m 'Bot Updating Documentation'
+                git mv docs/images/docker-${CONTAINER_NAME}.md docs/deprecated_images/docker-${CONTAINER_NAME}.md || :
+                if ! command -v yq || ! yq --help | grep -q 'mikefarah'; then
+                  YQ_DL_VERSION=$(curl -fsX GET "https://api.github.com/repos/mikefarah/yq/releases/latest" | jq -r '. | .tag_name')
+                  echo "No yq found, retrieving from upstream release version ${YQ_DL_VERSION}"
+                  curl -fo /usr/local/bin/yq -L "https://github.com/mikefarah/yq/releases/download/${YQ_DL_VERSION}/yq_linux_amd64"
+                  chmod +x /usr/local/bin/yq
+                fi
+                if ! yq -e '.plugins.[].redirects.redirect_maps.[] | select(. == "deprecated/" + env(CONTAINER_NAME) + ".md")' mkdocs.yml  >/dev/null 2>&1; then
+                  yq -i '(.plugins.[] | select(.redirects)).redirects.redirect_maps |= . + {env(CONTAINER_NAME) + ".md" : "deprecated/" + env(CONTAINER_NAME) + ".md"}' mkdocs.yml
+                  git add mkdocs.yml
+                fi
+                git commit -m 'Bot Moving Deprecated Documentation' || :
                 git pull https://LinuxServer-CI:${GITHUB_TOKEN}@github.com/linuxserver/docker-documentation.git ${GH_DOCS_DEFAULT_BRANCH} --rebase
                 git push https://LinuxServer-CI:${GITHUB_TOKEN}@github.com/linuxserver/docker-documentation.git ${GH_DOCS_DEFAULT_BRANCH} || \
                   (MAXWAIT="10" && echo "Push to docs failed, trying again in ${MAXWAIT} seconds" && \
@@ -375,6 +396,10 @@ pipeline {
               if [[ "${BRANCH_NAME}" == "${GH_DEFAULT_BRANCH}" ]] && [[ (! -f ${TEMPDIR}/unraid/templates/unraid/${CONTAINER_NAME}.xml) || ("$(md5sum ${TEMPDIR}/unraid/templates/unraid/${CONTAINER_NAME}.xml | awk '{ print $1 }')" != "$(md5sum ${TEMPDIR}/docker-${CONTAINER_NAME}/.jenkins-external/${CONTAINER_NAME}.xml | awk '{ print $1 }')") ]]; then
                 cd ${TEMPDIR}/unraid/templates/
                 GH_TEMPLATES_DEFAULT_BRANCH=$(git remote show origin | grep "HEAD branch:" | sed 's|.*HEAD branch: ||')
+                if ! grep -wq "${CONTAINER_NAME}" ${TEMPDIR}/unraid/templates/unraid/ignore.list; then
+                  echo "${CONTAINER_NAME}" >> ${TEMPDIR}/unraid/templates/unraid/ignore.list
+                  git add unraid/ignore.list
+                fi
                 if grep -wq "${CONTAINER_NAME}" ${TEMPDIR}/unraid/templates/unraid/ignore.list; then
                   echo "Image is on the ignore list, marking Unraid template as deprecated"
                   cp ${TEMPDIR}/docker-${CONTAINER_NAME}/.jenkins-external/${CONTAINER_NAME}.xml ${TEMPDIR}/unraid/templates/unraid/
@@ -971,6 +996,26 @@ EOF
             fi
             '''
 
+      }
+    }
+    stage('Deprecate/Disable Future Builds') {
+      when {
+        branch "development"
+        environment name: 'CHANGE_ID', value: ''
+        environment name: 'EXIT_STATUS', value: ''
+      }
+      steps {
+        sh '''#! /bin/bash
+          TEMPDIR=$(mktemp -d)
+          mkdir -p ${TEMPDIR}/repo
+          git clone https://github.com/${LS_USER}/${LS_REPO}.git ${TEMPDIR}/repo/${LS_REPO}
+          cd ${TEMPDIR}/repo/${LS_REPO}
+          git checkout -f development
+          git rm Jenkinsfile
+          git commit -m 'Disabling future builds'
+          git pull https://LinuxServer-CI:${GITHUB_TOKEN}@github.com/${LS_USER}/${LS_REPO}.git development
+          git push https://LinuxServer-CI:${GITHUB_TOKEN}@github.com/${LS_USER}/${LS_REPO}.git development
+          rm -Rf ${TEMPDIR}'''
       }
     }
   }
