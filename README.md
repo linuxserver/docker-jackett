@@ -26,6 +26,11 @@ Find us at:
 * [GitHub](https://github.com/linuxserver) - view the source for all of our repositories.
 * [Open Collective](https://opencollective.com/linuxserver) - please consider helping us by either donating or contributing to our budget
 
+# This image is deprecated. We will not offer support for this image and it will not be updated.
+
+Jackett has a bot publishing nightly stable releases
+Please switch to latest tag for stable
+
 # [linuxserver/jackett](https://github.com/linuxserver/docker-jackett)
 
 [![Scarf.io pulls](https://scarf.sh/installs-badge/linuxserver-ci/linuxserver%2Fjackett?color=94398d&label-color=555555&logo-color=ffffff&style=for-the-badge&package-type=docker)](https://scarf.sh/gateway/linuxserver-ci/docker/linuxserver%2Fjackett)
@@ -56,15 +61,6 @@ The architectures supported by this image are:
 | x86-64 | ✅ | amd64-\<version tag\> |
 | arm64 | ✅ | arm64v8-\<version tag\> |
 | armhf | ❌ | |
-
-## Version Tags
-
-This image provides various versions that are available via tags. Please read the descriptions carefully and exercise caution when using unstable or development tags.
-
-| Tag | Available | Description |
-| :----: | :----: |--- |
-| latest | ✅ | Stable Jackett Releases |
-| development | ✅ | Latest Jackett Releases |
 
 ## Application Setup
 
@@ -290,6 +286,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **11.03.24:** - Deprecate development tag.
 * **11.07.23:** - Rebase to Alpine 3.18.
 * **01.07.23:** - Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)
 * **13.02.23:** - Add icu-data-full to address [ICU issue](https://github.com/Jackett/Jackett/issues/14008) with Cyrillic character sets.
