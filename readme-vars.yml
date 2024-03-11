@@ -7,12 +7,15 @@ project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/ma
 project_blurb: "[{{ project_name|capitalize }}]({{ project_url }}) works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software. This allows for getting recent uploads (like RSS) and performing searches. Jackett is a single repository of maintained indexer scraping & translation logic - removing the burden from other apps."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
 project_blurb_optional_extras_enabled: false
+project_deprecation_status: true
+project_deprecation_message: |
+  Jackett has a bot publishing nightly stable releases
 # supported architectures
 available_architectures:
   - {arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
   - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
 # development version
-development_versions: true
+development_versions: false
 development_versions_items:
   - {tag: "latest", desc: "Stable Jackett Releases"}
   - {tag: "development", desc: "Latest Jackett Releases"}
@@ -49,6 +52,7 @@ app_setup_block: |
   More info at [{{ project_name|capitalize }}]({{ project_url }}).
 # changelog
 changelogs:
+  - {date: "11.03.24:", desc: "Deprecate development tag."}
   - {date: "11.07.23:", desc: "Rebase to Alpine 3.18."}
   - {date: "01.07.23:", desc: "Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)"}
   - {date: "13.02.23:", desc: "Add icu-data-full to address [ICU issue](https://github.com/Jackett/Jackett/issues/14008) with Cyrillic character sets."}
