@@ -57,15 +57,6 @@ The architectures supported by this image are:
 | arm64 | ✅ | arm64v8-\<version tag\> |
 | armhf | ❌ | |
 
-## Version Tags
-
-This image provides various versions that are available via tags. Please read the descriptions carefully and exercise caution when using unstable or development tags.
-
-| Tag | Available | Description |
-| :----: | :----: |--- |
-| latest | ✅ | Stable Jackett Releases |
-| development | ✅ | Latest Jackett Releases |
-
 ## Application Setup
 
 The web interface is at `<your-ip>:9117` , configure various trackers and connections to other apps there.
@@ -290,6 +281,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **11.03.24:** - Rebase to Alpine 3.19. Deprecate development tag as upstream is publishing nightly stable releases.
 * **11.07.23:** - Rebase to Alpine 3.18.
 * **01.07.23:** - Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)
 * **13.02.23:** - Add icu-data-full to address [ICU issue](https://github.com/Jackett/Jackett/issues/14008) with Cyrillic character sets.
