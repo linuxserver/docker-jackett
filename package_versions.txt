@@ -1,16 +1,16 @@
 NAME                                                        VERSION                                            TYPE     
-AngleSharp                                                  1.0.0.0                                            dotnet    
+AngleSharp                                                  1.1.2.0                                            dotnet    
 AngleSharp.Xml                                              0.17.0.0                                           dotnet    
 AutoMapper                                                  10.1.1.0                                           dotnet    
 Autofac                                                     6.5.0.0                                            dotnet    
 Autofac                                                     8.0.0.0                                            dotnet    
 BencodeNET                                                  1.0.0.0                                            dotnet    
 CommandLine                                                 2.9.1.0                                            dotnet    
-DateTimeRoutines                                            0.21.2090                                          dotnet    
-FlareSolverrSharp                                           3.0.6.0                                            dotnet    
+DateTimeRoutines                                            0.21.2103                                          dotnet    
+FlareSolverrSharp                                           3.0.7.0                                            dotnet    
 ICSharpCode.SharpZipLib                                     1.4.2.13                                           dotnet    
-Jackett.Common                                              0.21.2090                                          dotnet    
-JackettUpdater                                              0.21.2090                                          dotnet    
+Jackett.Common                                              0.21.2103                                          dotnet    
+JackettUpdater                                              0.21.2103                                          dotnet    
 Json.NET                                                    13.0.3.27908                                       dotnet    
 Json.NET BSON                                               1.0.2.22727                                        dotnet    
 Microsoft.AspNetCore                                        6.0.2824.12005                                     dotnet    
@@ -54,7 +54,7 @@ Microsoft.AspNetCore.HttpLogging                            6.0.2824.12005      
 Microsoft.AspNetCore.HttpOverrides                          6.0.2824.12005                                     dotnet    
 Microsoft.AspNetCore.HttpsPolicy                            6.0.2824.12005                                     dotnet    
 Microsoft.AspNetCore.Identity                               6.0.2824.12005                                     dotnet    
-Microsoft.AspNetCore.JsonPatch                              6.0.1222.57109                                     dotnet    
+Microsoft.AspNetCore.JsonPatch                              6.0.2824.12005                                     dotnet    
 Microsoft.AspNetCore.Localization                           6.0.2824.12005                                     dotnet    
 Microsoft.AspNetCore.Localization.Routing                   6.0.2824.12005                                     dotnet    
 Microsoft.AspNetCore.Metadata                               6.0.2824.12005                                     dotnet    
@@ -67,7 +67,7 @@ Microsoft.AspNetCore.Mvc.DataAnnotations                    6.0.2824.12005      
 Microsoft.AspNetCore.Mvc.Formatters.Json                    6.0.2824.12005                                     dotnet    
 Microsoft.AspNetCore.Mvc.Formatters.Xml                     6.0.2824.12005                                     dotnet    
 Microsoft.AspNetCore.Mvc.Localization                       6.0.2824.12005                                     dotnet    
-Microsoft.AspNetCore.Mvc.NewtonsoftJson                     6.0.1222.57109                                     dotnet    
+Microsoft.AspNetCore.Mvc.NewtonsoftJson                     6.0.2824.12005                                     dotnet    
 Microsoft.AspNetCore.Mvc.Razor                              6.0.2824.12005                                     dotnet    
 Microsoft.AspNetCore.Mvc.RazorPages                         6.0.2824.12005                                     dotnet    
 Microsoft.AspNetCore.Mvc.TagHelpers                         6.0.2824.12005                                     dotnet    
@@ -155,8 +155,8 @@ NLog v5.1.2                                                 5.1.2.1561          
 NLog.Extensions.Logging v5.2.1                              5.2.1.300                                          dotnet    
 NLog.Web.AspNetCore v5.2.1                                  5.2.1.786                                          dotnet    
 Org.Mentalis                                                1.0.0.0                                            dotnet    
-Polly                                                       8.2.0.2702                                         dotnet    
-Polly.Core                                                  8.2.0.2702                                         dotnet    
+Polly                                                       8.3.1.3207                                         dotnet    
+Polly.Core                                                  8.3.1.3207                                         dotnet    
 SocksWebProxy                                               1.4.0.1                                            dotnet    
 System                                                      6.0.2824.12007                                     dotnet    
 System.AppContext                                           6.0.2824.12007                                     dotnet    
@@ -288,7 +288,7 @@ System.Security.Principal.Windows                           6.0.2824.12007      
 System.Security.SecureString                                6.0.2824.12007                                     dotnet    
 System.ServiceModel.Web                                     6.0.2824.12007                                     dotnet    
 System.ServiceProcess                                       6.0.2824.12007                                     dotnet    
-System.ServiceProcess.ServiceController                     6.0.21.52210                                       dotnet    
+System.ServiceProcess.ServiceController                     6.0.1823.26907                                     dotnet    
 System.Text.Encoding                                        6.0.2824.12007                                     dotnet    
 System.Text.Encoding.CodePages                              6.0.2824.12007                                     dotnet    
 System.Text.Encoding.Extensions                             6.0.2824.12007                                     dotnet    
@@ -321,7 +321,7 @@ System.Xml.XPath.XDocument                                  6.0.2824.12007      
 System.Xml.XmlDocument                                      6.0.2824.12007                                     dotnet    
 System.Xml.XmlSerializer                                    6.0.2824.12007                                     dotnet    
 WindowsBase                                                 6.0.2824.12007                                     dotnet    
-YamlDotNet                                                  13.0.1.0                                           dotnet    
+YamlDotNet                                                  13.1.1.0                                           dotnet    
 alpine-baselayout                                           3.4.3-r2                                           apk       
 alpine-baselayout-data                                      3.4.3-r2                                           apk       
 alpine-keys                                                 2.4-r1                                             apk       
@@ -341,7 +341,7 @@ coreutils-sha512sum                                         9.4-r2              
 curl                                                        8.5.0-r0                                           apk       
 icu-data-full                                               74.1-r0                                            apk       
 icu-libs                                                    74.1-r0                                            apk       
-jackett                                                     0.21.2090                                          dotnet    
+jackett                                                     0.21.2103                                          dotnet    
 jq                                                          1.7.1-r0                                           apk       
 libacl                                                      2.3.1-r4                                           apk       
 libattr                                                     2.5.1-r5                                           apk       
