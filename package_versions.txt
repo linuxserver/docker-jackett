@@ -6,11 +6,11 @@ Autofac                                                     6.5.0.0             
 Autofac                                                     8.0.0.0                                            dotnet    
 BencodeNET                                                  1.0.0.0                                            dotnet    
 CommandLine                                                 2.9.1.0                                            dotnet    
-DateTimeRoutines                                            0.21.2358                                          dotnet    
+DateTimeRoutines                                            0.21.2371                                          dotnet    
 FlareSolverrSharp                                           3.0.7.0                                            dotnet    
 ICSharpCode.SharpZipLib                                     1.4.2.13                                           dotnet    
-Jackett.Common                                              0.21.2358                                          dotnet    
-JackettUpdater                                              0.21.2358                                          dotnet    
+Jackett.Common                                              0.21.2371                                          dotnet    
+JackettUpdater                                              0.21.2371                                          dotnet    
 Json.NET                                                    13.0.3.27908                                       dotnet    
 Json.NET BSON                                               1.0.2.22727                                        dotnet    
 Microsoft.AspNetCore                                        6.0.2924.17108                                     dotnet    
@@ -341,13 +341,13 @@ coreutils-sha512sum                                         9.4-r2              
 curl                                                        8.5.0-r0                                           apk       
 icu-data-full                                               74.1-r0                                            apk       
 icu-libs                                                    74.1-r0                                            apk       
-jackett                                                     0.21.2358                                          dotnet    
+jackett                                                     0.21.2371                                          dotnet    
 jq                                                          1.7.1-r0                                           apk       
 libacl                                                      2.3.1-r4                                           apk       
 libattr                                                     2.5.1-r5                                           apk       
 libbsd                                                      0.11.7-r3                                          apk       
 libc-utils                                                  0.7.2-r5                                           apk       
-libcrypto3                                                  3.1.4-r5                                           apk       
+libcrypto3                                                  3.1.4-r6                                           apk       
 libcurl                                                     8.5.0-r0                                           apk       
 libgcc                                                      13.2.1_git20231014-r0                              apk       
 libidn2                                                     2.3.4-r4                                           apk       
@@ -355,7 +355,7 @@ libintl                                                     0.22.3-r0           
 libmd                                                       1.1.0-r0                                           apk       
 libncursesw                                                 6.4_p20231125-r0                                   apk       
 libproc2                                                    4.0.4-r0                                           apk       
-libssl3                                                     3.1.4-r5                                           apk       
+libssl3                                                     3.1.4-r6                                           apk       
 libstdc++                                                   13.2.1_git20231014-r0                              apk       
 libunistring                                                1.1-r2                                             apk       
 linux-pam                                                   1.5.3-r7                                           apk       
