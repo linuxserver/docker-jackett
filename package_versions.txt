@@ -6,11 +6,11 @@ Autofac                                                     6.5.0.0             
 Autofac                                                     8.0.0.0                                            dotnet    
 BencodeNET                                                  1.0.0.0                                            dotnet    
 CommandLine                                                 2.9.1.0                                            dotnet    
-DateTimeRoutines                                            0.21.2554                                          dotnet    
+DateTimeRoutines                                            0.21.2560                                          dotnet    
 FlareSolverrSharp                                           3.0.7.0                                            dotnet    
 ICSharpCode.SharpZipLib                                     1.4.2.13                                           dotnet    
-Jackett.Common                                              0.21.2554                                          dotnet    
-JackettUpdater                                              0.21.2554                                          dotnet    
+Jackett.Common                                              0.21.2560                                          dotnet    
+JackettUpdater                                              0.21.2560                                          dotnet    
 Json.NET                                                    13.0.3.27908                                       dotnet    
 Json.NET BSON                                               1.0.2.22727                                        dotnet    
 Microsoft.AspNetCore                                        6.0.2924.17108                                     dotnet    
@@ -342,7 +342,7 @@ curl                                                        8.5.0-r0            
 findutils                                                   4.9.0-r5                                           apk       
 icu-data-full                                               74.1-r0                                            apk       
 icu-libs                                                    74.1-r0                                            apk       
-jackett                                                     0.21.2554                                          dotnet    
+jackett                                                     0.21.2560                                          dotnet    
 jq                                                          1.7.1-r0                                           apk       
 libacl                                                      2.3.1-r4                                           apk       
 libattr                                                     2.5.1-r5                                           apk       
