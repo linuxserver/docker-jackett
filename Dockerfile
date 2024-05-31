@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-alpine:3.19
+FROM ghcr.io/linuxserver/baseimage-alpine:3.20
 
 # set version label
 ARG BUILD_DATE
@@ -35,6 +35,7 @@ RUN \
   chown -R root:root /app/Jackett && \
   echo "**** save docker image version ****" && \
   echo "${VERSION}" > /etc/docker-image && \
+  printf "Linuxserver.io version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version && \
   echo "**** cleanup ****" && \
   rm -rf \
     /tmp/*
@@ -44,4 +45,5 @@ COPY root/ /
 
 # ports and volumes
 VOLUME /config
+
 EXPOSE 9117
