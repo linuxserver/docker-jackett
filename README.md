@@ -81,7 +81,7 @@ services:
       - AUTO_UPDATE=true #optional
       - RUN_OPTS= #optional
     volumes:
-      - /path/to/data:/config
+      - /path/to/jackett/data:/config
       - /path/to/blackhole:/downloads
     ports:
       - 9117:9117
@@ -99,7 +99,7 @@ docker run -d \
   -e AUTO_UPDATE=true `#optional` \
   -e RUN_OPTS= `#optional` \
   -p 9117:9117 \
-  -v /path/to/data:/config \
+  -v /path/to/jackett/data:/config \
   -v /path/to/blackhole:/downloads \
   --restart unless-stopped \
   lscr.io/linuxserver/jackett:latest
@@ -281,6 +281,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **31.05.24:** - Rebase to Alpine 3.20.
 * **11.03.24:** - Rebase to Alpine 3.19. Deprecate development tag as upstream is publishing nightly stable releases.
 * **11.07.23:** - Rebase to Alpine 3.18.
 * **01.07.23:** - Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)
