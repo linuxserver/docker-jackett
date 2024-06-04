@@ -1,15 +1,15 @@
 NAME                                                        VERSION                                            TYPE     
 AngleSharp                                                  1.1.2.0                                            dotnet    
 AngleSharp.Xml                                              0.17.0.0                                           dotnet    
-Autofac                                                     6.5.0.0                                            dotnet    
 Autofac                                                     8.0.0.0                                            dotnet    
+Autofac                                                     9.0.0.0                                            dotnet    
 BencodeNET                                                  1.0.0.0                                            dotnet    
 CommandLine                                                 2.9.1.0                                            dotnet    
-DateTimeRoutines                                            0.22.43+f3b02a0bb0bad0bcf3d9db3cf600cc3fd4a38117   dotnet    
+DateTimeRoutines                                            0.22.56                                            dotnet    
 FlareSolverrSharp                                           3.0.7.0                                            dotnet    
 ICSharpCode.SharpZipLib                                     1.4.2.13                                           dotnet    
-Jackett.Common                                              0.22.43+f3b02a0bb0bad0bcf3d9db3cf600cc3fd4a38117   dotnet    
-JackettUpdater                                              0.22.43+f3b02a0bb0bad0bcf3d9db3cf600cc3fd4a38117   dotnet    
+Jackett.Common                                              0.22.56                                            dotnet    
+JackettUpdater                                              0.22.56                                            dotnet    
 Json.NET                                                    13.0.3.27908                                       dotnet    
 Json.NET BSON                                               1.0.2.22727                                        dotnet    
 Microsoft.AspNetCore                                        8.0.624.26909                                      dotnet    
@@ -55,7 +55,7 @@ Microsoft.AspNetCore.HttpLogging                            8.0.624.26909       
 Microsoft.AspNetCore.HttpOverrides                          8.0.624.26909                                      dotnet    
 Microsoft.AspNetCore.HttpsPolicy                            8.0.624.26909                                      dotnet    
 Microsoft.AspNetCore.Identity                               8.0.624.26909                                      dotnet    
-Microsoft.AspNetCore.JsonPatch                              8.0.524.22404                                      dotnet    
+Microsoft.AspNetCore.JsonPatch                              8.0.624.26909                                      dotnet    
 Microsoft.AspNetCore.Localization                           8.0.624.26909                                      dotnet    
 Microsoft.AspNetCore.Localization.Routing                   8.0.624.26909                                      dotnet    
 Microsoft.AspNetCore.Metadata                               8.0.624.26909                                      dotnet    
@@ -68,7 +68,7 @@ Microsoft.AspNetCore.Mvc.DataAnnotations                    8.0.624.26909       
 Microsoft.AspNetCore.Mvc.Formatters.Json                    8.0.624.26909                                      dotnet    
 Microsoft.AspNetCore.Mvc.Formatters.Xml                     8.0.624.26909                                      dotnet    
 Microsoft.AspNetCore.Mvc.Localization                       8.0.624.26909                                      dotnet    
-Microsoft.AspNetCore.Mvc.NewtonsoftJson                     8.0.524.22404                                      dotnet    
+Microsoft.AspNetCore.Mvc.NewtonsoftJson                     8.0.624.26909                                      dotnet    
 Microsoft.AspNetCore.Mvc.Razor                              8.0.624.26909                                      dotnet    
 Microsoft.AspNetCore.Mvc.RazorPages                         8.0.624.26909                                      dotnet    
 Microsoft.AspNetCore.Mvc.TagHelpers                         8.0.624.26909                                      dotnet    
@@ -353,7 +353,7 @@ curl                                                        8.7.1-r0            
 findutils                                                   4.9.0-r5                                           apk       
 icu-data-full                                               74.2-r0                                            apk       
 icu-libs                                                    74.2-r0                                            apk       
-jackett                                                     0.22.43+f3b02a0bb0bad0bcf3d9db3cf600cc3fd4a38117   dotnet    
+jackett                                                     0.22.56                                            dotnet    
 jq                                                          1.7.1-r0                                           apk       
 libacl                                                      2.3.2-r0                                           apk       
 libattr                                                     2.5.2-r0                                           apk       
