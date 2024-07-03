@@ -11,7 +11,8 @@ LABEL maintainer="thelamer"
 
 # environment settings
 ENV XDG_DATA_HOME="/config" \
-XDG_CONFIG_HOME="/config"
+  XDG_CONFIG_HOME="/config" \
+  TMPDIR=/run/jackett-temp
 
 RUN \
   echo "**** install packages ****" && \
