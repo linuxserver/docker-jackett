@@ -62,6 +62,14 @@ The architectures supported by this image are:
 The web interface is at `<your-ip>:9117` , configure various trackers and connections to other apps there.
 More info at [Jackett](https://github.com/Jackett/Jackett).
 
+## Read-Only Operation
+
+This image can be run with a read-only container filesystem. For details please [read the docs](https://docs.linuxserver.io/misc/read-only/).
+
+### Caveats
+`AUTO_UPDATE` will not be available.
+
+
 ## Usage
 
 To help you get started creating a container from this image you can either use docker-compose or the docker cli.
@@ -119,6 +127,7 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-e RUN_OPTS=` | Optionally specify additional arguments to be passed. |
 | `-v /config` | Where Jackett should store its config file. |
 | `-v /downloads` | Path to torrent blackhole. |
+| `--read-only=true` | Run container with a read-only filesystem. Please [read the docs](https://docs.linuxserver.io/misc/read-only/). |
 
 ## Environment variables from files (Docker secrets)
 
