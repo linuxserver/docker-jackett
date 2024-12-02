@@ -10,11 +10,9 @@ project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_
 available_architectures:
   - {arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
   - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
-
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
-
 param_usage_include_vols: true
 param_volumes:
   - {vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/data", desc: "Where Jackett should store its config file."}
@@ -27,16 +25,57 @@ opt_param_usage_include_env: true
 opt_param_env_vars:
   - {env_var: "AUTO_UPDATE", env_value: "true", desc: "Allow Jackett to update inside of the container (currently recommended by Jackett and enabled by default)"}
   - {env_var: "RUN_OPTS", env_value: "", desc: "Optionally specify additional arguments to be passed."}
-
 readonly_supported: true
 readonly_message: |
   `AUTO_UPDATE` will not be available.
-
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
   The web interface is at `<your-ip>:9117` , configure various trackers and connections to other apps there.
   More info at [{{ project_name|capitalize }}]({{ project_url }}).
+# init diagram
+init_diagram: |
+  "jackett:latest": {
+    docker-mods
+    base {
+      fix-attr +\nlegacy cont-init
+    }
+    docker-mods -> base
+    legacy-services
+    custom services
+    init-services -> legacy-services
+    init-services -> custom services
+    custom services -> legacy-services
+    legacy-services -> ci-service-check
+    init-migrations -> init-adduser
+    init-os-end -> init-config
+    init-config -> init-config-end
+    init-jackett-config -> init-config-end
+    init-os-end -> init-crontab-config
+    init-mods-end -> init-custom-files
+    base -> init-envfile
+    init-config -> init-jackett-config
+    base -> init-migrations
+    base -> init-mods
+    init-config-end -> init-mods
+    init-mods -> init-mods-end
+    init-mods-package-install -> init-mods-end
+    init-mods -> init-mods-package-install
+    base -> init-os-end
+    init-adduser -> init-os-end
+    init-envfile -> init-os-end
+    init-migrations -> init-os-end
+    init-custom-files -> init-services
+    init-mods-end -> init-services
+    init-services -> svc-cron
+    svc-cron -> legacy-services
+    init-services -> svc-jackett
+    svc-jackett -> legacy-services
+  }
+  Base Images: {
+    "baseimage-alpine:3.20"
+  }
+  "jackett:latest" <- Base Images
 # changelog
 changelogs:
   - {date: "31.05.24:", desc: "Rebase to Alpine 3.20."}
