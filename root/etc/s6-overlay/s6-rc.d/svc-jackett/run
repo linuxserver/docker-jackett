@@ -7,6 +7,13 @@ else
     COMMAND="/app/Jackett/jackett --NoUpdates"
 fi
 
-exec \
-    s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z localhost 9117" \
-        s6-setuidgid abc ${COMMAND} ${RUN_OPTS}
+
+if [[ -z ${LSIO_NON_ROOT_USER} ]]; then
+    exec \
+        s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z localhost 9117" \
+            s6-setuidgid abc ${COMMAND} ${RUN_OPTS}
+else
+    exec \
+        s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z localhost 9117" \
+            ${COMMAND} ${RUN_OPTS}
+fi
