@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
-if [[ "${AUTO_UPDATE}" == "true" ]]; then
+if [[ "${AUTO_UPDATE,,}" == "true" ]] && [[ -z ${LSIO_NON_ROOT_USER} ]]; then
     COMMAND="/app/Jackett/jackett_launcher.sh"
 else
     COMMAND="/app/Jackett/jackett --NoUpdates"

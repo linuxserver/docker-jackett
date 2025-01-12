@@ -3,9 +3,8 @@
 
 mkdir -p /run/jackett-temp
 
-
 if [[ -z ${LSIO_NON_ROOT_USER} ]]; then
-    if [[ "${AUTO_UPDATE}" == "true" ]]; then
+    if [[ "${AUTO_UPDATE,,}" == "true" ]]; then
         lsiown -R abc:abc \
             /app/Jackett
     fi
