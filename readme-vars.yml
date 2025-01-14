@@ -23,11 +23,14 @@ param_ports:
 # optional container parameters
 opt_param_usage_include_env: true
 opt_param_env_vars:
-  - {env_var: "AUTO_UPDATE", env_value: "true", desc: "Allow Jackett to update inside of the container (currently recommended by Jackett and enabled by default)"}
+  - {env_var: "AUTO_UPDATE", env_value: "true", desc: "Allow Jackett to update inside of the container."}
   - {env_var: "RUN_OPTS", env_value: "", desc: "Optionally specify additional arguments to be passed."}
 readonly_supported: true
 readonly_message: |
-  `AUTO_UPDATE` will not be available.
+  * `AUTO_UPDATE` will not be available.
+nonroot_supported: true
+nonroot_message: |
+  * `AUTO_UPDATE` will not be available.
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
@@ -78,6 +81,7 @@ init_diagram: |
   "jackett:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "12.01.25:", desc: "Rebase to Alpine 3.21."}
   - {date: "31.05.24:", desc: "Rebase to Alpine 3.20."}
   - {date: "11.03.24:", desc: "Rebase to Alpine 3.19. Deprecate development tag as upstream is publishing nightly stable releases."}
   - {date: "11.07.23:", desc: "Rebase to Alpine 3.18."}

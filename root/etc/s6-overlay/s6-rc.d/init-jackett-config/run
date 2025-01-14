@@ -1,14 +1,16 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
-if [[ "${AUTO_UPDATE}" == "true" ]]; then
-    lsiown -R abc:abc \
-        /app/Jackett
-fi
-
 mkdir -p /run/jackett-temp
 
-# permissions
-lsiown -R abc:abc \
-    /config \
-    /run/jackett-temp
+if [[ -z ${LSIO_NON_ROOT_USER} ]]; then
+    if [[ "${AUTO_UPDATE,,}" == "true" ]]; then
+        lsiown -R abc:abc \
+            /app/Jackett
+    fi
+
+    # permissions
+    lsiown -R abc:abc \
+        /config \
+        /run/jackett-temp
+fi
