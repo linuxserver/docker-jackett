@@ -1,20 +1,20 @@
 NAME                                                         VERSION                TYPE                   
-AngleSharp                                                   1.2.0                  dotnet  (+1 duplicate)  
+AngleSharp                                                   1.3.0                  dotnet  (+1 duplicate)  
 AngleSharp.Xml                                               1.0.0                  dotnet  (+1 duplicate)  
 Autofac                                                      8.0.0                  dotnet  (+1 duplicate)  
 Autofac.Extensions.DependencyInjection                       9.0.0                  dotnet                  
 BencodeNET                                                   4.0.0                  dotnet  (+1 duplicate)  
 CommandLineParser                                            2.9.1                  dotnet  (+1 duplicate)  
-DateTimeRoutines                                             0.22.2026              dotnet  (+1 duplicate)  
+DateTimeRoutines                                             0.22.2029              dotnet  (+1 duplicate)  
 DotNet4.SocksProxy                                           1.4.0.1                dotnet  (+1 duplicate)  
 FlareSolverrSharp                                            3.0.7                  dotnet  (+1 duplicate)  
-Jackett.Common                                               0.22.2026              dotnet  (+1 duplicate)  
-JackettUpdater                                               0.22.2026              dotnet                  
+Jackett.Common                                               0.22.2029              dotnet  (+1 duplicate)  
+JackettUpdater                                               0.22.2029              dotnet                  
 Microsoft.AspNetCore.Http                                    2.3.0                  dotnet                  
 Microsoft.AspNetCore.Http.Abstractions                       2.3.0                  dotnet                  
 Microsoft.AspNetCore.Http.Features                           2.3.0                  dotnet                  
-Microsoft.AspNetCore.JsonPatch                               8.0.15                 dotnet                  
-Microsoft.AspNetCore.Mvc.NewtonsoftJson                      8.0.15                 dotnet                  
+Microsoft.AspNetCore.JsonPatch                               8.0.17                 dotnet                  
+Microsoft.AspNetCore.Mvc.NewtonsoftJson                      8.0.17                 dotnet                  
 Microsoft.AspNetCore.WebUtilities                            2.3.0                  dotnet                  
 Microsoft.Extensions.DependencyInjection.Abstractions        8.0.0                  dotnet                  
 Microsoft.Extensions.ObjectPool                              8.0.11                 dotnet                  
@@ -29,8 +29,8 @@ NLog.Extensions.Logging                                      5.4.0              
 NLog.Web.AspNetCore                                          5.4.0                  dotnet                  
 Newtonsoft.Json                                              13.0.3                 dotnet  (+1 duplicate)  
 Newtonsoft.Json.Bson                                         1.0.2                  dotnet                  
-Polly                                                        8.5.2                  dotnet  (+1 duplicate)  
-Polly.Core                                                   8.5.2                  dotnet  (+1 duplicate)  
+Polly                                                        8.6.1                  dotnet  (+1 duplicate)  
+Polly.Core                                                   8.6.1                  dotnet  (+1 duplicate)  
 SharpZipLib                                                  1.4.2                  dotnet  (+1 duplicate)  
 System.Diagnostics.EventLog                                  8.0.1                  dotnet                  
 System.IO.Pipelines                                          5.0.1                  dotnet                  
@@ -59,7 +59,7 @@ curl                                                         8.12.1-r1          
 findutils                                                    4.10.0-r0              apk                     
 icu-data-full                                                74.2-r0                apk                     
 icu-libs                                                     74.2-r0                apk                     
-jackett                                                      0.22.2026              dotnet                  
+jackett                                                      0.22.2029              dotnet                  
 jq                                                           1.7.1-r0               apk                     
 libattr                                                      2.5.2-r2               apk                     
 libbsd                                                       0.12.2-r0              apk                     
