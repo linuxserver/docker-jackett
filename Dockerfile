@@ -48,3 +48,5 @@ COPY root/ /
 VOLUME /config
 
 EXPOSE 9117
+USER abc
+ENTRYPOINT ["/app/Jackett/jackett_launcher.sh"]
