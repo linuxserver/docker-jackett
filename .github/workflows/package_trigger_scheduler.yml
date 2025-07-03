@@ -5,6 +5,9 @@ on:
     - cron:  '58 18 * * 3'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   package-trigger-scheduler:
     runs-on: ubuntu-latest
