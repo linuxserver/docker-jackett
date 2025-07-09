@@ -75,7 +75,7 @@ init_diagram: |
     svc-jackett -> legacy-services
   }
   Base Images: {
-    "baseimage-alpine:3.21"
+    "baseimage-alpine:3.22"
   }
   "jackett:latest" <- Base Images
 # changelog
