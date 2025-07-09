@@ -80,6 +80,7 @@ init_diagram: |
   "jackett:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "09.07.25:", desc: "Rebase to Alpine 3.22."}
   - {date: "12.01.25:", desc: "Rebase to Alpine 3.21."}
   - {date: "31.05.24:", desc: "Rebase to Alpine 3.20."}
   - {date: "11.03.24:", desc: "Rebase to Alpine 3.19. Deprecate development tag as upstream is publishing nightly stable releases."}
