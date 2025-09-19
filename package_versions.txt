@@ -5,11 +5,11 @@ Autofac                                                      8.0.0              
 Autofac.Extensions.DependencyInjection                       9.0.0                  dotnet                  
 BencodeNET                                                   4.0.0                  dotnet  (+1 duplicate)  
 CommandLineParser                                            2.9.1                  dotnet  (+1 duplicate)  
-DateTimeRoutines                                             0.23.38                dotnet  (+1 duplicate)  
+DateTimeRoutines                                             0.23.43                dotnet  (+1 duplicate)  
 DotNet4.SocksProxy                                           1.4.0.1                dotnet  (+1 duplicate)  
 FlareSolverrSharp                                            3.0.7                  dotnet  (+1 duplicate)  
-Jackett.Common                                               0.23.38                dotnet  (+1 duplicate)  
-JackettUpdater                                               0.23.38                dotnet                  
+Jackett.Common                                               0.23.43                dotnet  (+1 duplicate)  
+JackettUpdater                                               0.23.43                dotnet                  
 Microsoft.AspNetCore.Http                                    2.3.0                  dotnet                  
 Microsoft.AspNetCore.Http.Abstractions                       2.3.0                  dotnet                  
 Microsoft.AspNetCore.Http.Features                           2.3.0                  dotnet                  
@@ -59,7 +59,7 @@ curl                                                         8.14.1-r1          
 findutils                                                    4.10.0-r0              apk                     
 icu-data-full                                                76.1-r1                apk                     
 icu-libs                                                     76.1-r1                apk                     
-jackett                                                      0.23.38                dotnet                  
+jackett                                                      0.23.43                dotnet                  
 jq                                                           1.8.0-r0               apk                     
 libapk2                                                      2.14.9-r3              apk                     
 libattr                                                      2.5.2-r2               apk                     
