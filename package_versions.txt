@@ -5,11 +5,11 @@ Autofac                                                      8.0.0              
 Autofac.Extensions.DependencyInjection                       9.0.0                  dotnet                  
 BencodeNET                                                   4.0.0                  dotnet  (+1 duplicate)  
 CommandLineParser                                            2.9.1                  dotnet  (+1 duplicate)  
-DateTimeRoutines                                             0.24.2205              dotnet  (+1 duplicate)  
+DateTimeRoutines                                             0.24.2206              dotnet  (+1 duplicate)  
 DotNet4.SocksProxy                                           1.4.0.1                dotnet  (+1 duplicate)  
 FlareSolverrSharp                                            3.0.7                  dotnet  (+1 duplicate)  
-Jackett.Common                                               0.24.2205              dotnet  (+1 duplicate)  
-JackettUpdater                                               0.24.2205              dotnet                  
+Jackett.Common                                               0.24.2206              dotnet  (+1 duplicate)  
+JackettUpdater                                               0.24.2206              dotnet                  
 Microsoft.AspNetCore.Http                                    2.3.9                  dotnet                  
 Microsoft.AspNetCore.Http.Abstractions                       2.3.0                  dotnet                  
 Microsoft.AspNetCore.Http.Features                           2.3.0                  dotnet                  
@@ -46,7 +46,7 @@ bash                                                         5.2.37-r0          
 brotli-libs                                                  1.1.0-r2               apk                     
 busybox                                                      1.37.0-r20             apk                     
 busybox-binsh                                                1.37.0-r20             apk                     
-c-ares                                                       1.34.6-r0              apk                     
+c-ares                                                       1.34.8-r0              apk                     
 ca-certificates                                              20260611-r0            apk                     
 ca-certificates-bundle                                       20260611-r0            apk                     
 catatonit                                                    0.2.1-r0               apk                     
@@ -58,7 +58,7 @@ curl                                                         8.14.1-r2          
 findutils                                                    4.10.0-r0              apk                     
 icu-data-full                                                76.1-r1                apk                     
 icu-libs                                                     76.1-r1                apk                     
-jackett                                                      0.24.2205              dotnet                  
+jackett                                                      0.24.2206              dotnet                  
 jq                                                           1.8.1-r0               apk                     
 libapk2                                                      2.14.10-r0             apk                     
 libattr                                                      2.5.2-r2               apk                     
