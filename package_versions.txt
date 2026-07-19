@@ -1,26 +1,26 @@
 NAME                                                         VERSION                TYPE                   
-AngleSharp                                                   1.5.0                  dotnet  (+1 duplicate)  
+AngleSharp                                                   1.5.2                  dotnet  (+1 duplicate)  
 AngleSharp.Xml                                               1.0.0                  dotnet  (+1 duplicate)  
 Autofac                                                      8.0.0                  dotnet  (+1 duplicate)  
 Autofac.Extensions.DependencyInjection                       9.0.0                  dotnet                  
 BencodeNET                                                   4.0.0                  dotnet  (+1 duplicate)  
 CommandLineParser                                            2.9.1                  dotnet  (+1 duplicate)  
-DateTimeRoutines                                             0.24.2233              dotnet  (+1 duplicate)  
+DateTimeRoutines                                             0.24.2237              dotnet  (+1 duplicate)  
 DotNet4.SocksProxy                                           1.4.0.1                dotnet  (+1 duplicate)  
 FlareSolverrSharp                                            3.0.7                  dotnet  (+1 duplicate)  
-Jackett.Common                                               0.24.2233              dotnet  (+1 duplicate)  
-JackettUpdater                                               0.24.2233              dotnet                  
-Microsoft.AspNetCore.Http                                    2.3.9                  dotnet                  
-Microsoft.AspNetCore.Http.Abstractions                       2.3.0                  dotnet                  
-Microsoft.AspNetCore.Http.Features                           2.3.0                  dotnet                  
-Microsoft.AspNetCore.JsonPatch                               9.0.16                 dotnet                  
-Microsoft.AspNetCore.Mvc.NewtonsoftJson                      9.0.16                 dotnet                  
-Microsoft.AspNetCore.WebUtilities                            2.3.9                  dotnet                  
+Jackett.Common                                               0.24.2237              dotnet  (+1 duplicate)  
+JackettUpdater                                               0.24.2237              dotnet                  
+Microsoft.AspNetCore.Http                                    2.3.11                 dotnet                  
+Microsoft.AspNetCore.Http.Abstractions                       2.3.10                 dotnet                  
+Microsoft.AspNetCore.Http.Features                           2.3.9                  dotnet                  
+Microsoft.AspNetCore.JsonPatch                               9.0.18                 dotnet                  
+Microsoft.AspNetCore.Mvc.NewtonsoftJson                      9.0.18                 dotnet                  
+Microsoft.AspNetCore.WebUtilities                            2.3.11                 dotnet                  
 Microsoft.Extensions.DependencyInjection.Abstractions        8.0.0                  dotnet                  
 Microsoft.Extensions.ObjectPool                              8.0.11                 dotnet                  
 Microsoft.Extensions.Options                                 8.0.2                  dotnet                  
 Microsoft.Extensions.Primitives                              8.0.0                  dotnet                  
-Microsoft.Net.Http.Headers                                   2.3.8                  dotnet                  
+Microsoft.Net.Http.Headers                                   2.3.10                 dotnet                  
 MimeMapping                                                  1.0.1.50               dotnet  (+1 duplicate)  
 Mono.Posix                                                   7.1.0-final.1.21458.1  dotnet                  
 Mono.Unix                                                    7.1.0-final.1.21458.1  dotnet                  
@@ -29,13 +29,13 @@ NLog.Extensions.Logging                                      5.5.0              
 NLog.Web.AspNetCore                                          5.5.0                  dotnet                  
 Newtonsoft.Json                                              13.0.4                 dotnet  (+1 duplicate)  
 Newtonsoft.Json.Bson                                         1.0.2                  dotnet                  
-Polly                                                        8.6.6                  dotnet  (+1 duplicate)  
-Polly.Core                                                   8.6.6                  dotnet  (+1 duplicate)  
+Polly                                                        8.7.0                  dotnet  (+1 duplicate)  
+Polly.Core                                                   8.7.0                  dotnet  (+1 duplicate)  
 SharpZipLib                                                  1.4.2                  dotnet  (+1 duplicate)  
-System.Diagnostics.EventLog                                  9.0.16                 dotnet                  
-System.Security.Cryptography.ProtectedData                   9.0.16                 dotnet                  
-System.ServiceProcess.ServiceController                      9.0.16                 dotnet  (+1 duplicate)  
-YamlDotNet                                                   16.3.0                 dotnet  (+1 duplicate)  
+System.Diagnostics.EventLog                                  9.0.18                 dotnet                  
+System.Security.Cryptography.ProtectedData                   9.0.18                 dotnet                  
+System.ServiceProcess.ServiceController                      9.0.18                 dotnet  (+1 duplicate)  
+YamlDotNet                                                   18.1.0                 dotnet  (+1 duplicate)  
 acl-libs                                                     2.3.2-r1               apk                     
 alpine-baselayout                                            3.7.0-r0               apk                     
 alpine-baselayout-data                                       3.7.0-r0               apk                     
@@ -54,17 +54,17 @@ coreutils                                                    9.7-r1             
 coreutils-env                                                9.7-r1                 apk                     
 coreutils-fmt                                                9.7-r1                 apk                     
 coreutils-sha512sum                                          9.7-r1                 apk                     
-curl                                                         8.14.1-r2              apk                     
+curl                                                         8.14.1-r3              apk                     
 findutils                                                    4.10.0-r0              apk                     
 icu-data-full                                                76.1-r1                apk                     
 icu-libs                                                     76.1-r1                apk                     
-jackett                                                      0.24.2233              dotnet                  
+jackett                                                      0.24.2237              dotnet                  
 jq                                                           1.8.1-r0               apk                     
 libapk2                                                      2.14.10-r0             apk                     
 libattr                                                      2.5.2-r2               apk                     
 libbsd                                                       0.12.2-r0              apk                     
 libcrypto3                                                   3.5.7-r0               apk                     
-libcurl                                                      8.14.1-r2              apk                     
+libcurl                                                      8.14.1-r3              apk                     
 libgcc                                                       14.2.0-r6              apk                     
 libidn2                                                      2.3.7-r0               apk                     
 libintl                                                      0.24.1-r0              apk                     
@@ -90,7 +90,7 @@ scanelf                                                      1.3.8-r1           
 shadow                                                       4.17.3-r0              apk                     
 skalibs-libs                                                 2.14.4.0-r0            apk                     
 ssl_client                                                   1.37.0-r20             apk                     
-tzdata                                                       2026b-r0               apk                     
+tzdata                                                       2026c-r0               apk                     
 utmps-libs                                                   0.1.3.1-r0             apk                     
 zlib                                                         1.3.2-r0               apk                     
 zstd-libs                                                    1.5.7-r0               apk                     
