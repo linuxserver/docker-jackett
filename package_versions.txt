@@ -5,11 +5,11 @@ Autofac                                                      8.0.0              
 Autofac.Extensions.DependencyInjection                       9.0.0                  dotnet                  
 BencodeNET                                                   4.0.0                  dotnet  (+1 duplicate)  
 CommandLineParser                                            2.9.1                  dotnet  (+1 duplicate)  
-DateTimeRoutines                                             0.24.2307              dotnet  (+1 duplicate)  
+DateTimeRoutines                                             0.24.2315              dotnet  (+1 duplicate)  
 DotNet4.SocksProxy                                           1.4.0.1                dotnet  (+1 duplicate)  
 FlareSolverrSharp                                            3.0.7                  dotnet  (+1 duplicate)  
-Jackett.Common                                               0.24.2307              dotnet  (+1 duplicate)  
-JackettUpdater                                               0.24.2307              dotnet                  
+Jackett.Common                                               0.24.2315              dotnet  (+1 duplicate)  
+JackettUpdater                                               0.24.2315              dotnet                  
 Microsoft.AspNetCore.Http                                    2.3.11                 dotnet                  
 Microsoft.AspNetCore.Http.Abstractions                       2.3.10                 dotnet                  
 Microsoft.AspNetCore.Http.Features                           2.3.9                  dotnet                  
@@ -41,7 +41,7 @@ alpine-baselayout                                            3.7.2-r1           
 alpine-baselayout-data                                       3.7.2-r1               apk                     
 alpine-keys                                                  2.6-r0                 apk                     
 alpine-release                                               3.24.1-r0              apk                     
-apk-tools                                                    3.0.6-r0               apk                     
+apk-tools                                                    3.0.7-r0               apk                     
 bash                                                         5.3.9-r1               apk                     
 brotli-libs                                                  1.2.0-r1               apk                     
 busybox                                                      1.37.0-r31             apk                     
@@ -58,9 +58,9 @@ curl                                                         8.21.0-r0          
 findutils                                                    4.10.0-r1              apk                     
 icu-data-full                                                78.1-r0                apk                     
 icu-libs                                                     78.1-r0                apk                     
-jackett                                                      0.24.2307              dotnet                  
+jackett                                                      0.24.2315              dotnet                  
 jq                                                           1.8.1-r0               apk                     
-libapk                                                       3.0.6-r0               apk                     
+libapk                                                       3.0.7-r0               apk                     
 libattr                                                      2.5.2-r2               apk                     
 libbsd                                                       0.12.2-r0              apk                     
 libcrypto3                                                   3.5.7-r0               apk                     
